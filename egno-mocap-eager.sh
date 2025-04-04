@@ -13,8 +13,8 @@
 #----------------------------------------------------
 
 #SBATCH -J egnomocap       # Job name
-#SBATCH -o slurm-out/egnomocap.o%j   # Name of stdout output file
-#SBATCH -e slurm-out/egnomocap.e%j   # Name of stderr error file
+#SBATCH -o slurm-out/egno-mocap-out/eager/egnomocap.o%j   # Name of stdout output file
+#SBATCH -e slurm-out/egno-mocap-out/eager/egnomocap.e%j   # Name of stderr error file
 #SBATCH -p rtx             # Queue (partition) name
 #SBATCH -N 4               # Total # of nodes 
 #SBATCH -t 00:30:00        # Run time (hh:mm:ss)
