@@ -1,0 +1,137 @@
+Namespace(exp_name='mocap_exp', batch_size=12, epochs=1, no_cuda=False, seed=1, log_interval=1, test_interval=5, outf='exp_results', lr=0.0005, nf=128, model='egno', n_layers=6, max_training_samples=200, weight_decay=1e-10, delta_frame=30, data_dir='./EGNO/motion/dataset', dropout=0.5, config_by_file='config_mocap_no.json', lambda_link=1, n_cluster=3, flat=False, interaction_layer=3, pooling_layer=3, decoder_layer=1, case='run', num_timesteps=100, time_emb_dim=32, num_modes=2, cuda=True)
+Got Split!
+Got 200 samples!
+Got Split!
+Got 240 samples!
+Got Split!
+Got 240 samples!
+/work2/10613/andrewnguyen/frontera/compilers-sp25/EGNO/model/layer_no.py:99: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=False):
+/work2/10613/andrewnguyen/frontera/compilers-sp25/EGNO/model/layer_no.py:152: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=False):
+train epoch 0 avg loss: 570.99589 avg lploss: 0.00000
+==> val epoch 0 avg loss: 97.42172 avg lploss: 0.00000
+==> test epoch 0 avg loss: 92.71396 avg lploss: 0.00000
+*** Best Val Loss: 97.42172 	 Best Test Loss: 92.71396 	 Best epoch 0
+
+=== Forward Pass Timing Summary ===
+layers.0: 4457.4686 ms (avg over 56 calls)
+layers.1: 4452.1831 ms (avg over 56 calls)
+layers.2: 4448.2981 ms (avg over 56 calls)
+layers.3: 4444.5840 ms (avg over 56 calls)
+layers.4: 4440.7570 ms (avg over 56 calls)
+layers.5: 4436.6892 ms (avg over 56 calls)
+time_conv_modules.0: 4500.7133 ms (avg over 56 calls)
+time_conv_modules.1: 4456.3573 ms (avg over 56 calls)
+time_conv_modules.2: 4451.9173 ms (avg over 56 calls)
+time_conv_modules.3: 4448.2610 ms (avg over 56 calls)
+time_conv_modules.4: 4444.5253 ms (avg over 56 calls)
+time_conv_modules.5: 4440.7078 ms (avg over 56 calls)
+time_conv_x_modules.0: 4497.0434 ms (avg over 56 calls)
+time_conv_x_modules.1: 4455.4478 ms (avg over 56 calls)
+time_conv_x_modules.2: 4451.4724 ms (avg over 56 calls)
+time_conv_x_modules.3: 4447.7803 ms (avg over 56 calls)
+time_conv_x_modules.4: 4444.0261 ms (avg over 56 calls)
+time_conv_x_modules.5: 4439.9753 ms (avg over 56 calls)
+Per-layer Model Sparsity:
+=======================================================
+layers.0.edge_message_net.scalar_net.mlp.0.weight num elements:    33152.00 sparsity:       49.79%
+layers.0.edge_message_net.scalar_net.mlp.0.bias num elements:      128.00 sparsity:       52.34%
+layers.0.edge_message_net.scalar_net.mlp.2.weight num elements:    16384.00 sparsity:       50.07%
+layers.0.edge_message_net.scalar_net.mlp.2.bias num elements:      128.00 sparsity:       44.53%
+layers.0.coord_net.mlp.0.weight          num elements:    16384.00 sparsity:       49.90%
+layers.0.coord_net.mlp.0.bias            num elements:      128.00 sparsity:       53.12%
+layers.0.coord_net.mlp.2.weight          num elements:      128.00 sparsity:       50.00%
+layers.0.node_v_net.mlp.0.weight         num elements:    16384.00 sparsity:       50.21%
+layers.0.node_v_net.mlp.0.bias           num elements:      128.00 sparsity:       43.75%
+layers.0.node_v_net.mlp.2.weight         num elements:      128.00 sparsity:       50.00%
+layers.0.node_v_net.mlp.2.bias           num elements:        1.00 sparsity:      100.00%
+layers.0.node_net.mlp.0.weight           num elements:    32768.00 sparsity:       49.70%
+layers.0.node_net.mlp.0.bias             num elements:      128.00 sparsity:       44.53%
+layers.0.node_net.mlp.2.weight           num elements:    16384.00 sparsity:       50.01%
+layers.0.node_net.mlp.2.bias             num elements:      128.00 sparsity:       53.12%
+layers.1.edge_message_net.scalar_net.mlp.0.weight num elements:    33152.00 sparsity:       50.00%
+layers.1.edge_message_net.scalar_net.mlp.0.bias num elements:      128.00 sparsity:       53.91%
+layers.1.edge_message_net.scalar_net.mlp.2.weight num elements:    16384.00 sparsity:       49.65%
+layers.1.edge_message_net.scalar_net.mlp.2.bias num elements:      128.00 sparsity:       49.22%
+layers.1.coord_net.mlp.0.weight          num elements:    16384.00 sparsity:       49.89%
+layers.1.coord_net.mlp.0.bias            num elements:      128.00 sparsity:       41.41%
+layers.1.coord_net.mlp.2.weight          num elements:      128.00 sparsity:       52.34%
+layers.1.node_v_net.mlp.0.weight         num elements:    16384.00 sparsity:       49.64%
+layers.1.node_v_net.mlp.0.bias           num elements:      128.00 sparsity:       52.34%
+layers.1.node_v_net.mlp.2.weight         num elements:      128.00 sparsity:       52.34%
+layers.1.node_v_net.mlp.2.bias           num elements:        1.00 sparsity:      100.00%
+layers.1.node_net.mlp.0.weight           num elements:    32768.00 sparsity:       50.37%
+layers.1.node_net.mlp.0.bias             num elements:      128.00 sparsity:       53.12%
+layers.1.node_net.mlp.2.weight           num elements:    16384.00 sparsity:       49.43%
+layers.1.node_net.mlp.2.bias             num elements:      128.00 sparsity:       45.31%
+layers.2.edge_message_net.scalar_net.mlp.0.weight num elements:    33152.00 sparsity:       49.57%
+layers.2.edge_message_net.scalar_net.mlp.0.bias num elements:      128.00 sparsity:       50.00%
+layers.2.edge_message_net.scalar_net.mlp.2.weight num elements:    16384.00 sparsity:       50.54%
+layers.2.edge_message_net.scalar_net.mlp.2.bias num elements:      128.00 sparsity:       46.88%
+layers.2.coord_net.mlp.0.weight          num elements:    16384.00 sparsity:       50.43%
+layers.2.coord_net.mlp.0.bias            num elements:      128.00 sparsity:       50.00%
+layers.2.coord_net.mlp.2.weight          num elements:      128.00 sparsity:       45.31%
+layers.2.coord_net.mlp.2.bias            num elements:        1.00 sparsity:      100.00%
+layers.2.node_v_net.mlp.0.weight         num elements:    16384.00 sparsity:       49.85%
+layers.2.node_v_net.mlp.0.bias           num elements:      128.00 sparsity:       50.78%
+layers.2.node_v_net.mlp.2.weight         num elements:      128.00 sparsity:       52.34%
+layers.2.node_v_net.mlp.2.bias           num elements:        1.00 sparsity:      100.00%
+layers.2.node_net.mlp.0.weight           num elements:    32768.00 sparsity:       50.14%
+layers.2.node_net.mlp.0.bias             num elements:      128.00 sparsity:       53.12%
+layers.2.node_net.mlp.2.weight           num elements:    16384.00 sparsity:       50.10%
+layers.2.node_net.mlp.2.bias             num elements:      128.00 sparsity:       46.88%
+layers.3.edge_message_net.scalar_net.mlp.0.weight num elements:    33152.00 sparsity:       49.85%
+layers.3.edge_message_net.scalar_net.mlp.0.bias num elements:      128.00 sparsity:       53.91%
+layers.3.edge_message_net.scalar_net.mlp.2.weight num elements:    16384.00 sparsity:       49.93%
+layers.3.edge_message_net.scalar_net.mlp.2.bias num elements:      128.00 sparsity:       45.31%
+layers.3.coord_net.mlp.0.weight          num elements:    16384.00 sparsity:       49.40%
+layers.3.coord_net.mlp.0.bias            num elements:      128.00 sparsity:       55.47%
+layers.3.coord_net.mlp.2.weight          num elements:      128.00 sparsity:       48.44%
+layers.3.node_v_net.mlp.0.weight         num elements:    16384.00 sparsity:       50.01%
+layers.3.node_v_net.mlp.0.bias           num elements:      128.00 sparsity:       49.22%
+layers.3.node_v_net.mlp.2.weight         num elements:      128.00 sparsity:       45.31%
+layers.3.node_net.mlp.0.weight           num elements:    32768.00 sparsity:       49.83%
+layers.3.node_net.mlp.0.bias             num elements:      128.00 sparsity:       49.22%
+layers.3.node_net.mlp.2.weight           num elements:    16384.00 sparsity:       50.78%
+layers.3.node_net.mlp.2.bias             num elements:      128.00 sparsity:       50.78%
+layers.4.edge_message_net.scalar_net.mlp.0.weight num elements:    33152.00 sparsity:       49.71%
+layers.4.edge_message_net.scalar_net.mlp.0.bias num elements:      128.00 sparsity:       60.16%
+layers.4.edge_message_net.scalar_net.mlp.2.weight num elements:    16384.00 sparsity:       49.68%
+layers.4.edge_message_net.scalar_net.mlp.2.bias num elements:      128.00 sparsity:       46.09%
+layers.4.coord_net.mlp.0.weight          num elements:    16384.00 sparsity:       49.79%
+layers.4.coord_net.mlp.0.bias            num elements:      128.00 sparsity:       54.69%
+layers.4.coord_net.mlp.2.weight          num elements:      128.00 sparsity:       51.56%
+layers.4.coord_net.mlp.2.bias            num elements:        1.00 sparsity:      100.00%
+layers.4.node_v_net.mlp.0.weight         num elements:    16384.00 sparsity:       50.38%
+layers.4.node_v_net.mlp.0.bias           num elements:      128.00 sparsity:       50.00%
+layers.4.node_v_net.mlp.2.weight         num elements:      128.00 sparsity:       42.19%
+layers.4.node_v_net.mlp.2.bias           num elements:        1.00 sparsity:      100.00%
+layers.4.node_net.mlp.0.weight           num elements:    32768.00 sparsity:       49.85%
+layers.4.node_net.mlp.0.bias             num elements:      128.00 sparsity:       44.53%
+layers.4.node_net.mlp.2.weight           num elements:    16384.00 sparsity:       50.84%
+layers.4.node_net.mlp.2.bias             num elements:      128.00 sparsity:       49.22%
+layers.5.edge_message_net.scalar_net.mlp.0.weight num elements:    33152.00 sparsity:       50.08%
+layers.5.edge_message_net.scalar_net.mlp.0.bias num elements:      128.00 sparsity:       50.00%
+layers.5.edge_message_net.scalar_net.mlp.2.weight num elements:    16384.00 sparsity:       49.78%
+layers.5.edge_message_net.scalar_net.mlp.2.bias num elements:      128.00 sparsity:       48.44%
+layers.5.coord_net.mlp.0.weight          num elements:    16384.00 sparsity:       50.20%
+layers.5.coord_net.mlp.0.bias            num elements:      128.00 sparsity:       51.56%
+layers.5.coord_net.mlp.2.weight          num elements:      128.00 sparsity:       48.44%
+layers.5.node_v_net.mlp.0.weight         num elements:    16384.00 sparsity:       50.53%
+layers.5.node_v_net.mlp.0.bias           num elements:      128.00 sparsity:       49.22%
+layers.5.node_v_net.mlp.2.weight         num elements:      128.00 sparsity:       49.22%
+layers.5.node_net.mlp.0.weight           num elements:    32768.00 sparsity:       49.77%
+layers.5.node_net.mlp.0.bias             num elements:      128.00 sparsity:       51.56%
+layers.5.node_net.mlp.2.weight           num elements:    16384.00 sparsity:       50.16%
+layers.5.node_net.mlp.2.bias             num elements:      128.00 sparsity:       55.47%
+embedding.weight                         num elements:     4352.00 sparsity:       51.47%
+embedding.bias                           num elements:      128.00 sparsity:       49.22%
+=======================================================
+Total runtime: 7.408450654998887 seconds
+best_train = 570.995892
+best_lp = 0.000000
+best_val = 97.421716
+best_test = 92.713960
+best_epoch = 0
+best_train = 570.995892, best_lp = 0.000000, best_val = 97.421716, best_test = 92.713960, best_epoch = 0
