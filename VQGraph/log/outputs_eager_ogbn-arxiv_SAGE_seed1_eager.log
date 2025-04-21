@@ -1,0 +1,48 @@
+/work2/09808/mp46753/frontera/ML_Project/VQGraph/vq.py:283: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled=False)
+/work2/09808/mp46753/frontera/ML_Project/VQGraph/vq.py:418: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled=False)
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/dataloading/dataloader.py:1144: DGLWarning: Dataloader CPU affinity opt is not enabled, consider switching it on (see enable_cpu_affinity() or CPU best practices for DGL [https://docs.dgl.ai/tutorials/cpu/cpu_best_practises.html])
+  dgl_warning(
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:92: DGLWarning: Recommend creating graphs by `dgl.graph(data)` instead of `dgl.DGLGraph(data)`.
+  dgl_warning(
+Saved sparsity snapshot to outputs_eager/tran/ogbn-arxiv/SAGE/seed_1/sparsity_before.csv
+                     layer_name  num_elements    sparsity
+0  encoder.graph_layer_1.weight         16384   49.847412
+1    encoder.graph_layer_1.bias           128  100.000000
+2  encoder.graph_layer_2.weight         32768   49.984741
+3    encoder.graph_layer_2.bias           256  100.000000
+4      encoder.decoder_1.weight         16384   49.926758
+5        encoder.decoder_1.bias           128   49.218750
+6      encoder.decoder_2.weight         16384   50.335693
+7        encoder.decoder_2.bias           128   49.218750
+8         encoder.linear.weight         10240   49.355469
+9           encoder.linear.bias            40   57.500000
+Traceback (most recent call last):
+  File "train_teacher.py", line 154, in <module>
+    main()
+  File "train_teacher.py", line 150, in main
+    run(args)
+  File "train_teacher.py", line 123, in run
+    out, _, _, h_list, dist, codebook = run_transductive(
+  File "/work2/09808/mp46753/frontera/ML_Project/VQGraph/train_and_eval.py", line 266, in run_transductive
+    loss = train_sage(model, data, feats, labels, criterion, optimizer)
+  File "/work2/09808/mp46753/frontera/ML_Project/VQGraph/train_and_eval.py", line 46, in train_sage
+    _, logits, loss , _ , _= model(blocks, batch_feats)
+  File "/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/work2/09808/mp46753/frontera/ML_Project/VQGraph/models.py", line 456, in forward
+    return self.encoder(data, feats)
+  File "/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/work2/09808/mp46753/frontera/ML_Project/VQGraph/models.py", line 171, in forward
+    h = self.norms[0](h)
+  File "/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/torch/nn/modules/container.py", line 297, in __getitem__
+    return self._modules[self._get_abs_string_index(idx)]
+  File "/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/torch/nn/modules/container.py", line 287, in _get_abs_string_index
+    raise IndexError(f'index {idx} is out of range')
+IndexError: index 0 is out of range

@@ -1,0 +1,41 @@
+/work2/09808/mp46753/frontera/ML_Project/VQGraph/vq.py:283: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled=False)
+/work2/09808/mp46753/frontera/ML_Project/VQGraph/vq.py:418: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled=False)
+Saved sparsity snapshot to outputs_eager/tran/citeseer/GCN/seed_0/sparsity_before.csv
+                     layer_name  num_elements    sparsity
+0  encoder.graph_layer_1.weight      13712209   49.980452
+1    encoder.graph_layer_1.bias          3703  100.000000
+2  encoder.graph_layer_2.weight        473984   50.075952
+3    encoder.graph_layer_2.bias           128  100.000000
+4      encoder.decoder_1.weight      13712209   49.997057
+5        encoder.decoder_1.bias          3703   50.418580
+6      encoder.decoder_2.weight      13712209   49.985301
+7        encoder.decoder_2.bias          3703   50.634621
+8         encoder.linear.weight           768   52.473958
+9           encoder.linear.bias             6   50.000000
+Saved sparsity snapshot to outputs_eager/tran/citeseer/GCN/seed_0/sparsity_after.csv
+                     layer_name  num_elements   sparsity
+0  encoder.graph_layer_1.weight      13712209  49.714047
+1    encoder.graph_layer_1.bias          3703   0.216041
+2  encoder.graph_layer_2.weight        473984  50.029115
+3    encoder.graph_layer_2.bias           128  14.843750
+4      encoder.decoder_1.weight      13712209  50.020752
+5        encoder.decoder_1.bias          3703  50.148528
+6      encoder.decoder_2.weight      13712209  49.734204
+7        encoder.decoder_2.bias          3703  42.317040
+8         encoder.linear.weight           768  52.734375
+9           encoder.linear.bias             6  50.000000
+Saved forward timing report to outputs_eager/tran/citeseer/GCN/seed_0/forward_times.csv
+               layer_name  avg_forward_time_ms  num_calls
+0         encoder.dropout             0.000185       1001
+1   encoder.graph_layer_1             0.000255       1001
+2   encoder.graph_layer_2             0.000267       1001
+3       encoder.decoder_1             0.000231       1001
+4       encoder.decoder_2             0.000198       1001
+5          encoder.linear             0.000221       1001
+6   encoder.vq.project_in             0.000164       1001
+7  encoder.vq.project_out             0.000243       1001
+8    encoder.vq._codebook             0.000259       1001
+CPU Memory Usage: 1272.41 MB
+Max GPU Memory Used: 1691.82 MB
