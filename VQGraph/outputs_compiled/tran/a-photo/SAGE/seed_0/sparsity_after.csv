@@ -1,0 +1,11 @@
+layer_name,num_elements,sparsity
+_orig_mod.encoder.graph_layer_1.weight,555025,11.090671591369757
+_orig_mod.encoder.graph_layer_1.bias,745,3.3557046979865772
+_orig_mod.encoder.graph_layer_2.weight,95360,29.674916107382547
+_orig_mod.encoder.graph_layer_2.bias,128,0.0
+_orig_mod.encoder.decoder_1.weight,555025,58.47700554029098
+_orig_mod.encoder.decoder_1.bias,745,0.0
+_orig_mod.encoder.decoder_2.weight,555025,89.95054276834377
+_orig_mod.encoder.decoder_2.bias,745,57.58389261744966
+_orig_mod.encoder.linear.weight,1024,1.46484375
+_orig_mod.encoder.linear.bias,8,0.0

@@ -1,0 +1,521 @@
+/work2/09808/mp46753/frontera/ML_Project/VQGraph/vq.py:283: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled=False)
+/work2/09808/mp46753/frontera/ML_Project/VQGraph/vq.py:418: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled=False)
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/dataloading/dataloader.py:1144: DGLWarning: Dataloader CPU affinity opt is not enabled, consider switching it on (see enable_cpu_affinity() or CPU best practices for DGL [https://docs.dgl.ai/tutorials/cpu/cpu_best_practises.html])
+  dgl_warning(
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:92: DGLWarning: Recommend creating graphs by `dgl.graph(data)` instead of `dgl.DGLGraph(data)`.
+  dgl_warning(
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/torch/_dynamo/variables/functions.py:663: UserWarning: Graph break due to unsupported builtin torch._C._to_dlpack. This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind). If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround. If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use torch.compiler.allow_in_graph.
+  torch._dynamo.utils.warn_once(msg)
+V0421 04:10:05.732738 47277852992768 torch/_dynamo/guards.py:2611] [4/1] [__recompiles] Recompiling function create_unitgraph_from_coo in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph_index.py:1254
+V0421 04:10:05.732738 47277852992768 torch/_dynamo/guards.py:2611] [4/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:05.732738 47277852992768 torch/_dynamo/guards.py:2611] [4/1] [__recompiles]     - tensor 'L['row']' dispatch key set mismatch. expected DispatchKeySet(CPU, BackendSelect, ADInplaceOrView, AutogradCPU), actual DispatchKeySet(CUDA, BackendSelect, ADInplaceOrView, AutogradCUDA)
+V0421 04:10:05.747769 47277852992768 torch/_dynamo/guards.py:2611] [5/1] [__recompiles] Recompiling function to_dgl_nd in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/__init__.py:141
+V0421 04:10:05.747769 47277852992768 torch/_dynamo/guards.py:2611] [5/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:05.747769 47277852992768 torch/_dynamo/guards.py:2611] [5/1] [__recompiles]     - tensor 'L['data']' dispatch key set mismatch. expected DispatchKeySet(CPU, BackendSelect, ADInplaceOrView, AutogradCPU), actual DispatchKeySet(CUDA, BackendSelect, ADInplaceOrView, AutogradCUDA)
+V0421 04:10:05.756546 47277852992768 torch/_dynamo/guards.py:2611] [6/1] [__recompiles] Recompiling function zerocopy_to_dgl_ndarray in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:432
+V0421 04:10:05.756546 47277852992768 torch/_dynamo/guards.py:2611] [6/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:05.756546 47277852992768 torch/_dynamo/guards.py:2611] [6/1] [__recompiles]     - tensor 'L['data']' dispatch key set mismatch. expected DispatchKeySet(CPU, BackendSelect, ADInplaceOrView, AutogradCPU), actual DispatchKeySet(CUDA, BackendSelect, ADInplaceOrView, AutogradCUDA)
+V0421 04:10:05.784905 47277852992768 torch/_dynamo/guards.py:2611] [8/1] [__recompiles] Recompiling function torch_dynamo_resume_in_create_unitgraph_from_coo_at_1296 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph_index.py:1296
+V0421 04:10:05.784905 47277852992768 torch/_dynamo/guards.py:2611] [8/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:05.784905 47277852992768 torch/_dynamo/guards.py:2611] [8/1] [__recompiles]     - tensor 'L['col']' dispatch key set mismatch. expected DispatchKeySet(CPU, BackendSelect, ADInplaceOrView, AutogradCPU), actual DispatchKeySet(CUDA, BackendSelect, ADInplaceOrView, AutogradCUDA)
+W0421 04:10:12.753306 47277852992768 torch/_dynamo/variables/tensor.py:715] [30/0] Graph break from `Tensor.item()`, consider setting:
+W0421 04:10:12.753306 47277852992768 torch/_dynamo/variables/tensor.py:715] [30/0]     torch._dynamo.config.capture_scalar_outputs = True
+W0421 04:10:12.753306 47277852992768 torch/_dynamo/variables/tensor.py:715] [30/0] or:
+W0421 04:10:12.753306 47277852992768 torch/_dynamo/variables/tensor.py:715] [30/0]     env TORCHDYNAMO_CAPTURE_SCALAR_OUTPUTS=1
+W0421 04:10:12.753306 47277852992768 torch/_dynamo/variables/tensor.py:715] [30/0] to include these operations in the captured graph.
+W0421 04:10:12.753306 47277852992768 torch/_dynamo/variables/tensor.py:715] [30/0] 
+V0421 04:10:15.804894 47277852992768 torch/_dynamo/guards.py:2611] [4/2] [__recompiles] Recompiling function create_unitgraph_from_coo in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph_index.py:1254
+V0421 04:10:15.804894 47277852992768 torch/_dynamo/guards.py:2611] [4/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:15.804894 47277852992768 torch/_dynamo/guards.py:2611] [4/2] [__recompiles]     - tensor 'L['row']' size mismatch at index 0. expected 0, actual 3921
+V0421 04:10:15.804894 47277852992768 torch/_dynamo/guards.py:2611] [4/2] [__recompiles]     - tensor 'L['row']' dispatch key set mismatch. expected DispatchKeySet(CPU, BackendSelect, ADInplaceOrView, AutogradCPU), actual DispatchKeySet(CUDA, BackendSelect, ADInplaceOrView, AutogradCUDA)
+V0421 04:10:15.833771 47277852992768 torch/_dynamo/guards.py:2611] [5/2] [__recompiles] Recompiling function to_dgl_nd in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/__init__.py:141
+V0421 04:10:15.833771 47277852992768 torch/_dynamo/guards.py:2611] [5/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:15.833771 47277852992768 torch/_dynamo/guards.py:2611] [5/2] [__recompiles]     - tensor 'L['data']' size mismatch at index 0. expected 0, actual 3921
+V0421 04:10:15.833771 47277852992768 torch/_dynamo/guards.py:2611] [5/2] [__recompiles]     - tensor 'L['data']' dispatch key set mismatch. expected DispatchKeySet(CPU, BackendSelect, ADInplaceOrView, AutogradCPU), actual DispatchKeySet(CUDA, BackendSelect, ADInplaceOrView, AutogradCUDA)
+V0421 04:10:15.845643 47277852992768 torch/_dynamo/guards.py:2611] [6/2] [__recompiles] Recompiling function zerocopy_to_dgl_ndarray in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:432
+V0421 04:10:15.845643 47277852992768 torch/_dynamo/guards.py:2611] [6/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:15.845643 47277852992768 torch/_dynamo/guards.py:2611] [6/2] [__recompiles]     - tensor 'L['data']' size mismatch at index 0. expected 0, actual 3921
+V0421 04:10:15.845643 47277852992768 torch/_dynamo/guards.py:2611] [6/2] [__recompiles]     - tensor 'L['data']' dispatch key set mismatch. expected DispatchKeySet(CPU, BackendSelect, ADInplaceOrView, AutogradCPU), actual DispatchKeySet(CUDA, BackendSelect, ADInplaceOrView, AutogradCUDA)
+V0421 04:10:15.898900 47277852992768 torch/_dynamo/guards.py:2611] [8/2] [__recompiles] Recompiling function torch_dynamo_resume_in_create_unitgraph_from_coo_at_1296 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph_index.py:1296
+V0421 04:10:15.898900 47277852992768 torch/_dynamo/guards.py:2611] [8/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:15.898900 47277852992768 torch/_dynamo/guards.py:2611] [8/2] [__recompiles]     - tensor 'L['col']' size mismatch at index 0. expected 0, actual 3921
+V0421 04:10:15.898900 47277852992768 torch/_dynamo/guards.py:2611] [8/2] [__recompiles]     - tensor 'L['col']' dispatch key set mismatch. expected DispatchKeySet(CPU, BackendSelect, ADInplaceOrView, AutogradCPU), actual DispatchKeySet(CUDA, BackendSelect, ADInplaceOrView, AutogradCUDA)
+V0421 04:10:15.917984 47277852992768 torch/_dynamo/guards.py:2611] [32/1] [__recompiles] Recompiling function torch_dynamo_resume_in_add_edges_at_574 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:574
+V0421 04:10:15.917984 47277852992768 torch/_dynamo/guards.py:2611] [32/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:15.917984 47277852992768 torch/_dynamo/guards.py:2611] [32/1] [__recompiles]     - L['___stack0'] == 2655                                      
+V0421 04:10:16.136483 47277852992768 torch/_dynamo/guards.py:2611] [34/1] [__recompiles] Recompiling function cat in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:222
+V0421 04:10:16.136483 47277852992768 torch/_dynamo/guards.py:2611] [34/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:16.136483 47277852992768 torch/_dynamo/guards.py:2611] [34/1] [__recompiles]     - tensor 'L['seq'][0]' size mismatch at index 0. expected 0, actual 3921
+V0421 04:10:16.879854 47277852992768 torch/_dynamo/guards.py:2611] [20/1] [__recompiles] Recompiling function add_edges in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:435
+V0421 04:10:16.879854 47277852992768 torch/_dynamo/guards.py:2611] [20/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:16.879854 47277852992768 torch/_dynamo/guards.py:2611] [20/1] [__recompiles]     - tensor 'L['u']' size mismatch at index 0. expected 3921, actual 785
+V0421 04:10:16.902410 47277852992768 torch/_dynamo/guards.py:2611] [26/1] [__recompiles] Recompiling function torch_dynamo_resume_in_add_edges_at_541 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:541
+V0421 04:10:16.902410 47277852992768 torch/_dynamo/guards.py:2611] [26/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:16.902410 47277852992768 torch/_dynamo/guards.py:2611] [26/1] [__recompiles]     - tensor 'L['v']' size mismatch at index 0. expected 3921, actual 785
+V0421 04:10:16.930022 47277852992768 torch/_dynamo/guards.py:2611] [27/1] [__recompiles] Recompiling function torch_dynamo_resume_in_add_edges_at_542 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:542
+V0421 04:10:16.930022 47277852992768 torch/_dynamo/guards.py:2611] [27/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:16.930022 47277852992768 torch/_dynamo/guards.py:2611] [27/1] [__recompiles]     - tensor 'L['___stack0']' size mismatch at index 0. expected 3921, actual 785
+V0421 04:10:16.946468 47277852992768 torch/_dynamo/guards.py:2611] [28/1] [__recompiles] Recompiling function torch_dynamo_resume_in_add_edges_at_545 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:545
+V0421 04:10:16.946468 47277852992768 torch/_dynamo/guards.py:2611] [28/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:16.946468 47277852992768 torch/_dynamo/guards.py:2611] [28/1] [__recompiles]     - tensor 'L['u']' size mismatch at index 0. expected 3921, actual 785
+V0421 04:10:17.013138 47277852992768 torch/_dynamo/guards.py:2611] [30/1] [__recompiles] Recompiling function torch_dynamo_resume_in_add_edges_at_573 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:573
+V0421 04:10:17.013138 47277852992768 torch/_dynamo/guards.py:2611] [30/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:17.013138 47277852992768 torch/_dynamo/guards.py:2611] [30/1] [__recompiles]     - tensor 'L['u']' size mismatch at index 0. expected 3921, actual 785
+V0421 04:10:17.260436 47277852992768 torch/_dynamo/guards.py:2611] [32/2] [__recompiles] Recompiling function torch_dynamo_resume_in_add_edges_at_574 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:574
+V0421 04:10:17.260436 47277852992768 torch/_dynamo/guards.py:2611] [32/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:17.260436 47277852992768 torch/_dynamo/guards.py:2611] [32/2] [__recompiles]     - tensor 'L['v']' size mismatch at index 0. expected 3921, actual 785
+V0421 04:10:17.260436 47277852992768 torch/_dynamo/guards.py:2611] [32/2] [__recompiles]     - L['___stack0'] == 2655                                      
+V0421 04:10:17.523759 47277852992768 torch/_dynamo/guards.py:2611] [34/2] [__recompiles] Recompiling function cat in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:222
+V0421 04:10:17.523759 47277852992768 torch/_dynamo/guards.py:2611] [34/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:17.523759 47277852992768 torch/_dynamo/guards.py:2611] [34/2] [__recompiles]     - tensor 'L['seq'][1]' size mismatch at index 0. expected 3921, actual 785
+V0421 04:10:17.523759 47277852992768 torch/_dynamo/guards.py:2611] [34/2] [__recompiles]     - tensor 'L['seq'][0]' size mismatch at index 0. expected 0, actual 7842
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/torch/_dynamo/variables/functions.py:663: UserWarning: Graph break due to unsupported builtin posix.stat. This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind). If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround. If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use torch.compiler.allow_in_graph.
+  torch._dynamo.utils.warn_once(msg)
+V0421 04:10:21.744033 47277852992768 torch/_dynamo/guards.py:2611] [6/3] [__recompiles] Recompiling function zerocopy_to_dgl_ndarray in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:432
+V0421 04:10:21.744033 47277852992768 torch/_dynamo/guards.py:2611] [6/3] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:21.744033 47277852992768 torch/_dynamo/guards.py:2611] [6/3] [__recompiles]     - GLOBAL_STATE changed: grad_mode 
+V0421 04:10:21.744033 47277852992768 torch/_dynamo/guards.py:2611] [6/3] [__recompiles]     - GLOBAL_STATE changed: grad_mode 
+V0421 04:10:21.744033 47277852992768 torch/_dynamo/guards.py:2611] [6/3] [__recompiles]     - GLOBAL_STATE changed: grad_mode 
+V0421 04:10:21.792654 47277852992768 torch/_dynamo/guards.py:2611] [7/1] [__recompiles] Recompiling function torch_dynamo_resume_in_zerocopy_to_dgl_ndarray_at_435 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:435
+V0421 04:10:21.792654 47277852992768 torch/_dynamo/guards.py:2611] [7/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:21.792654 47277852992768 torch/_dynamo/guards.py:2611] [7/1] [__recompiles]     - GLOBAL_STATE changed: grad_mode 
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/torch/_dynamo/variables/functions.py:663: UserWarning: Graph break due to unsupported builtin time.perf_counter. This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind). If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround. If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use torch.compiler.allow_in_graph.
+  torch._dynamo.utils.warn_once(msg)
+V0421 04:10:22.038287 47277852992768 torch/_dynamo/guards.py:2611] [86/1] [__recompiles] Recompiling function torch_dynamo_resume_in_hook_at_12 in /work2/09808/mp46753/frontera/ML_Project/VQGraph/benchmark_utils.py:12
+V0421 04:10:22.038287 47277852992768 torch/_dynamo/guards.py:2611] [86/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:22.038287 47277852992768 torch/_dynamo/guards.py:2611] [86/1] [__recompiles]     - L['___stack0'] == 930063.509972869                          
+V0421 04:10:22.135206 47277852992768 torch/_dynamo/guards.py:2611] [86/2] [__recompiles] Recompiling function torch_dynamo_resume_in_hook_at_12 in /work2/09808/mp46753/frontera/ML_Project/VQGraph/benchmark_utils.py:12
+V0421 04:10:22.135206 47277852992768 torch/_dynamo/guards.py:2611] [86/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:22.135206 47277852992768 torch/_dynamo/guards.py:2611] [86/2] [__recompiles]     - L['___stack0'] == 930063.523151503                          
+V0421 04:10:22.135206 47277852992768 torch/_dynamo/guards.py:2611] [86/2] [__recompiles]     - L['___stack0'] == 930063.509972869                          
+V0421 04:10:25.354835 47277852992768 torch/_dynamo/guards.py:2611] [86/3] [__recompiles] Recompiling function torch_dynamo_resume_in_hook_at_12 in /work2/09808/mp46753/frontera/ML_Project/VQGraph/benchmark_utils.py:12
+V0421 04:10:25.354835 47277852992768 torch/_dynamo/guards.py:2611] [86/3] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:25.354835 47277852992768 torch/_dynamo/guards.py:2611] [86/3] [__recompiles]     - L['___stack0'] == 930063.620076814                          
+V0421 04:10:25.354835 47277852992768 torch/_dynamo/guards.py:2611] [86/3] [__recompiles]     - L['___stack0'] == 930063.523151503                          
+V0421 04:10:25.354835 47277852992768 torch/_dynamo/guards.py:2611] [86/3] [__recompiles]     - L['___stack0'] == 930063.509972869                          
+V0421 04:10:26.922294 47277852992768 torch/_dynamo/guards.py:2611] [86/4] [__recompiles] Recompiling function torch_dynamo_resume_in_hook_at_12 in /work2/09808/mp46753/frontera/ML_Project/VQGraph/benchmark_utils.py:12
+V0421 04:10:26.922294 47277852992768 torch/_dynamo/guards.py:2611] [86/4] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:26.922294 47277852992768 torch/_dynamo/guards.py:2611] [86/4] [__recompiles]     - L['___stack0'] == 930066.837892245                          
+V0421 04:10:26.922294 47277852992768 torch/_dynamo/guards.py:2611] [86/4] [__recompiles]     - L['___stack0'] == 930063.620076814                          
+V0421 04:10:26.922294 47277852992768 torch/_dynamo/guards.py:2611] [86/4] [__recompiles]     - L['___stack0'] == 930063.523151503                          
+V0421 04:10:26.922294 47277852992768 torch/_dynamo/guards.py:2611] [86/4] [__recompiles]     - L['___stack0'] == 930063.509972869                          
+V0421 04:10:26.994159 47277852992768 torch/_dynamo/guards.py:2611] [86/5] [__recompiles] Recompiling function torch_dynamo_resume_in_hook_at_12 in /work2/09808/mp46753/frontera/ML_Project/VQGraph/benchmark_utils.py:12
+V0421 04:10:26.994159 47277852992768 torch/_dynamo/guards.py:2611] [86/5] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:26.994159 47277852992768 torch/_dynamo/guards.py:2611] [86/5] [__recompiles]     - L['___stack0'] == 930068.407050107                          
+V0421 04:10:26.994159 47277852992768 torch/_dynamo/guards.py:2611] [86/5] [__recompiles]     - L['___stack0'] == 930066.837892245                          
+V0421 04:10:26.994159 47277852992768 torch/_dynamo/guards.py:2611] [86/5] [__recompiles]     - L['___stack0'] == 930063.620076814                          
+V0421 04:10:26.994159 47277852992768 torch/_dynamo/guards.py:2611] [86/5] [__recompiles]     - L['___stack0'] == 930063.523151503                          
+V0421 04:10:26.994159 47277852992768 torch/_dynamo/guards.py:2611] [86/5] [__recompiles]     - L['___stack0'] == 930063.509972869                          
+V0421 04:10:27.000601 47277852992768 torch/_dynamo/guards.py:2611] [86/6] [__recompiles] Recompiling function torch_dynamo_resume_in_hook_at_12 in /work2/09808/mp46753/frontera/ML_Project/VQGraph/benchmark_utils.py:12
+V0421 04:10:27.000601 47277852992768 torch/_dynamo/guards.py:2611] [86/6] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.000601 47277852992768 torch/_dynamo/guards.py:2611] [86/6] [__recompiles]     - L['___stack0'] == 930068.478972065                          
+V0421 04:10:27.000601 47277852992768 torch/_dynamo/guards.py:2611] [86/6] [__recompiles]     - L['___stack0'] == 930068.407050107                          
+V0421 04:10:27.000601 47277852992768 torch/_dynamo/guards.py:2611] [86/6] [__recompiles]     - L['___stack0'] == 930066.837892245                          
+V0421 04:10:27.000601 47277852992768 torch/_dynamo/guards.py:2611] [86/6] [__recompiles]     - L['___stack0'] == 930063.620076814                          
+V0421 04:10:27.000601 47277852992768 torch/_dynamo/guards.py:2611] [86/6] [__recompiles]     - L['___stack0'] == 930063.523151503                          
+V0421 04:10:27.000601 47277852992768 torch/_dynamo/guards.py:2611] [86/6] [__recompiles]     - L['___stack0'] == 930063.509972869                          
+V0421 04:10:27.059689 47277852992768 torch/_dynamo/guards.py:2611] [57/1] [__recompiles] Recompiling function __setitem__ in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/view.py:82
+V0421 04:10:27.059689 47277852992768 torch/_dynamo/guards.py:2611] [57/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.059689 47277852992768 torch/_dynamo/guards.py:2611] [57/1] [__recompiles]     - tensor 'L['val']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:27.082407 47277852992768 torch/_dynamo/guards.py:2611] [61/1] [__recompiles] Recompiling function __setitem__ in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/frame.py:690
+V0421 04:10:27.082407 47277852992768 torch/_dynamo/guards.py:2611] [61/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.082407 47277852992768 torch/_dynamo/guards.py:2611] [61/1] [__recompiles]     - tensor 'L['data']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:27.102264 47277852992768 torch/_dynamo/guards.py:2611] [62/1] [__recompiles] Recompiling function update_column in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/frame.py:772
+V0421 04:10:27.102264 47277852992768 torch/_dynamo/guards.py:2611] [62/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.102264 47277852992768 torch/_dynamo/guards.py:2611] [62/1] [__recompiles]     - tensor 'L['data']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:27.123137 47277852992768 torch/_dynamo/guards.py:2611] [63/1] [__recompiles] Recompiling function create in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/frame.py:472
+V0421 04:10:27.123137 47277852992768 torch/_dynamo/guards.py:2611] [63/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.123137 47277852992768 torch/_dynamo/guards.py:2611] [63/1] [__recompiles]     - tensor 'L['data']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:27.141909 47277852992768 torch/_dynamo/guards.py:2611] [64/1] [__recompiles] Recompiling function __init__ in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/frame.py:210
+V0421 04:10:27.141909 47277852992768 torch/_dynamo/guards.py:2611] [64/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.141909 47277852992768 torch/_dynamo/guards.py:2611] [64/1] [__recompiles]     - tensor 'L['storage']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:27.161983 47277852992768 torch/_dynamo/guards.py:2611] [65/1] [__recompiles] Recompiling function infer_scheme in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/frame.py:151
+V0421 04:10:27.161983 47277852992768 torch/_dynamo/guards.py:2611] [65/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.161983 47277852992768 torch/_dynamo/guards.py:2611] [65/1] [__recompiles]     - tensor 'L['tensor']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:27.209758 47277852992768 torch/_dynamo/guards.py:2611] [68/1] [__recompiles] Recompiling function func in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/ops/spmm.py:213
+V0421 04:10:27.209758 47277852992768 torch/_dynamo/guards.py:2611] [68/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.209758 47277852992768 torch/_dynamo/guards.py:2611] [68/1] [__recompiles]     - tensor 'L['x']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:27.223700 47277852992768 torch/_dynamo/guards.py:2611] [70/1] [__recompiles] Recompiling function torch_dynamo_resume_in_gspmm_at_75 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/ops/spmm.py:75
+V0421 04:10:27.223700 47277852992768 torch/_dynamo/guards.py:2611] [70/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.223700 47277852992768 torch/_dynamo/guards.py:2611] [70/1] [__recompiles]     - tensor 'L['lhs_data']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:27.241932 47277852992768 torch/_dynamo/guards.py:2611] [74/1] [__recompiles] Recompiling function forward in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/sparse.py:163
+V0421 04:10:27.241932 47277852992768 torch/_dynamo/guards.py:2611] [74/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.241932 47277852992768 torch/_dynamo/guards.py:2611] [74/1] [__recompiles]     - tensor 'L['X']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:27.258392 47277852992768 torch/_dynamo/guards.py:2611] [77/1] [__recompiles] Recompiling function zeros in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:287
+V0421 04:10:27.258392 47277852992768 torch/_dynamo/guards.py:2611] [77/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.258392 47277852992768 torch/_dynamo/guards.py:2611] [77/1] [__recompiles]     - L['shape'][1] == 745                                        
+V0421 04:10:27.885431 47277852992768 torch/_dynamo/guards.py:2611] [6/4] [__recompiles] Recompiling function zerocopy_to_dgl_ndarray in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:432
+V0421 04:10:27.885431 47277852992768 torch/_dynamo/guards.py:2611] [6/4] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.885431 47277852992768 torch/_dynamo/guards.py:2611] [6/4] [__recompiles]     - GLOBAL_STATE changed: grad_mode 
+V0421 04:10:27.885431 47277852992768 torch/_dynamo/guards.py:2611] [6/4] [__recompiles]     - tensor 'L['data']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:27.885431 47277852992768 torch/_dynamo/guards.py:2611] [6/4] [__recompiles]     - GLOBAL_STATE changed: grad_mode 
+V0421 04:10:27.885431 47277852992768 torch/_dynamo/guards.py:2611] [6/4] [__recompiles]     - GLOBAL_STATE changed: grad_mode 
+V0421 04:10:27.936567 47277852992768 torch/_dynamo/guards.py:2611] [79/1] [__recompiles] Recompiling function zerocopy_to_dgl_ndarray_for_write in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:454
+V0421 04:10:27.936567 47277852992768 torch/_dynamo/guards.py:2611] [79/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.936567 47277852992768 torch/_dynamo/guards.py:2611] [79/1] [__recompiles]     - tensor 'L['input']' stride mismatch at index 0. expected 745, actual 128
+V0421 04:10:27.974945 47277852992768 torch/_dynamo/guards.py:2611] [80/1] [__recompiles] Recompiling function check_is_view in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:441
+V0421 04:10:27.974945 47277852992768 torch/_dynamo/guards.py:2611] [80/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.974945 47277852992768 torch/_dynamo/guards.py:2611] [80/1] [__recompiles]     - tensor 'L['input']' stride mismatch at index 0. expected 745, actual 128
+V0421 04:10:27.985215 47277852992768 torch/_dynamo/guards.py:2611] [81/1] [__recompiles] Recompiling function torch_dynamo_resume_in_check_is_view_at_443 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:443
+V0421 04:10:27.985215 47277852992768 torch/_dynamo/guards.py:2611] [81/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.985215 47277852992768 torch/_dynamo/guards.py:2611] [81/1] [__recompiles]     - tensor 'L['input']' stride mismatch at index 0. expected 745, actual 128
+V0421 04:10:27.996844 47277852992768 torch/_dynamo/guards.py:2611] [82/1] [__recompiles] Recompiling function torch_dynamo_resume_in_zerocopy_to_dgl_ndarray_for_write_at_461 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:461
+V0421 04:10:27.996844 47277852992768 torch/_dynamo/guards.py:2611] [82/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:27.996844 47277852992768 torch/_dynamo/guards.py:2611] [82/1] [__recompiles]     - tensor 'L['input']' stride mismatch at index 0. expected 745, actual 128
+V0421 04:10:28.011516 47277852992768 torch/_dynamo/guards.py:2611] [83/1] [__recompiles] Recompiling function torch_dynamo_resume_in_forward_at_165 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/sparse.py:165
+V0421 04:10:28.011516 47277852992768 torch/_dynamo/guards.py:2611] [83/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:28.011516 47277852992768 torch/_dynamo/guards.py:2611] [83/1] [__recompiles]     - tensor 'L['X']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:28.051892 47277852992768 torch/_dynamo/guards.py:2611] [86/7] [__recompiles] Recompiling function torch_dynamo_resume_in_hook_at_12 in /work2/09808/mp46753/frontera/ML_Project/VQGraph/benchmark_utils.py:12
+V0421 04:10:28.051892 47277852992768 torch/_dynamo/guards.py:2611] [86/7] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:28.051892 47277852992768 torch/_dynamo/guards.py:2611] [86/7] [__recompiles]     - L['___stack0'] == 930068.485419624                          
+V0421 04:10:28.051892 47277852992768 torch/_dynamo/guards.py:2611] [86/7] [__recompiles]     - L['___stack0'] == 930068.478972065                          
+V0421 04:10:28.051892 47277852992768 torch/_dynamo/guards.py:2611] [86/7] [__recompiles]     - L['___stack0'] == 930068.407050107                          
+V0421 04:10:28.051892 47277852992768 torch/_dynamo/guards.py:2611] [86/7] [__recompiles]     - L['___stack0'] == 930066.837892245                          
+V0421 04:10:28.051892 47277852992768 torch/_dynamo/guards.py:2611] [86/7] [__recompiles]     - L['___stack0'] == 930063.620076814                          
+V0421 04:10:28.051892 47277852992768 torch/_dynamo/guards.py:2611] [86/7] [__recompiles]     - L['___stack0'] == 930063.523151503                          
+V0421 04:10:28.051892 47277852992768 torch/_dynamo/guards.py:2611] [86/7] [__recompiles]     - L['___stack0'] == 930063.509972869                          
+V0421 04:10:28.058411 47277852992768 torch/_dynamo/guards.py:2611] [86/8] [__recompiles] Recompiling function torch_dynamo_resume_in_hook_at_12 in /work2/09808/mp46753/frontera/ML_Project/VQGraph/benchmark_utils.py:12
+V0421 04:10:28.058411 47277852992768 torch/_dynamo/guards.py:2611] [86/8] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:28.058411 47277852992768 torch/_dynamo/guards.py:2611] [86/8] [__recompiles]     - L['___stack0'] == 930069.536651832                          
+V0421 04:10:28.058411 47277852992768 torch/_dynamo/guards.py:2611] [86/8] [__recompiles]     - L['___stack0'] == 930068.485419624                          
+V0421 04:10:28.058411 47277852992768 torch/_dynamo/guards.py:2611] [86/8] [__recompiles]     - L['___stack0'] == 930068.478972065                          
+V0421 04:10:28.058411 47277852992768 torch/_dynamo/guards.py:2611] [86/8] [__recompiles]     - L['___stack0'] == 930068.407050107                          
+V0421 04:10:28.058411 47277852992768 torch/_dynamo/guards.py:2611] [86/8] [__recompiles]     - L['___stack0'] == 930066.837892245                          
+V0421 04:10:28.058411 47277852992768 torch/_dynamo/guards.py:2611] [86/8] [__recompiles]     - L['___stack0'] == 930063.620076814                          
+V0421 04:10:28.058411 47277852992768 torch/_dynamo/guards.py:2611] [86/8] [__recompiles]     - L['___stack0'] == 930063.523151503                          
+V0421 04:10:28.058411 47277852992768 torch/_dynamo/guards.py:2611] [86/8] [__recompiles]     - L['___stack0'] == 930063.509972869                          
+W0421 04:10:28.058548 47277852992768 torch/_dynamo/convert_frame.py:762] [86/8] torch._dynamo hit config.cache_size_limit (8)
+W0421 04:10:28.058548 47277852992768 torch/_dynamo/convert_frame.py:762] [86/8]    function: 'torch_dynamo_resume_in_hook_at_12' (/work2/09808/mp46753/frontera/ML_Project/VQGraph/benchmark_utils.py:12)
+W0421 04:10:28.058548 47277852992768 torch/_dynamo/convert_frame.py:762] [86/8]    last reason: L['___stack0'] == 930063.509972869                          
+W0421 04:10:28.058548 47277852992768 torch/_dynamo/convert_frame.py:762] [86/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W0421 04:10:28.058548 47277852992768 torch/_dynamo/convert_frame.py:762] [86/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/dataloading/dataloader.py:1144: DGLWarning: Dataloader CPU affinity opt is not enabled, consider switching it on (see enable_cpu_affinity() or CPU best practices for DGL [https://docs.dgl.ai/tutorials/cpu/cpu_best_practises.html])
+  dgl_warning(
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:92: DGLWarning: Recommend creating graphs by `dgl.graph(data)` instead of `dgl.DGLGraph(data)`.
+  dgl_warning(
+V0421 04:10:29.258138 47277852992768 torch/_dynamo/guards.py:2611] [0/1] [__recompiles] Recompiling function forward in /work2/09808/mp46753/frontera/ML_Project/VQGraph/models.py:449
+V0421 04:10:29.258138 47277852992768 torch/_dynamo/guards.py:2611] [0/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:29.258138 47277852992768 torch/_dynamo/guards.py:2611] [0/1] [__recompiles]     - tensor 'L['feats']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:29.284029 47277852992768 torch/_dynamo/guards.py:2611] [1/1] [__recompiles] Recompiling function forward in /work2/09808/mp46753/frontera/ML_Project/VQGraph/models.py:154
+V0421 04:10:29.284029 47277852992768 torch/_dynamo/guards.py:2611] [1/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:29.284029 47277852992768 torch/_dynamo/guards.py:2611] [1/1] [__recompiles]     - tensor 'L['feats']' size mismatch at index 0. expected 2656, actual 2632
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:92: DGLWarning: Recommend creating graphs by `dgl.graph(data)` instead of `dgl.DGLGraph(data)`.
+  dgl_warning(
+V0421 04:10:29.300871 47277852992768 torch/_dynamo/guards.py:2611] [9/1] [__recompiles] Recompiling function torch_dynamo_resume_in_forward_at_157 in /work2/09808/mp46753/frontera/ML_Project/VQGraph/models.py:157
+V0421 04:10:29.300871 47277852992768 torch/_dynamo/guards.py:2611] [9/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:29.300871 47277852992768 torch/_dynamo/guards.py:2611] [9/1] [__recompiles]     - tensor 'L['h']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:29.315927 47277852992768 torch/_dynamo/guards.py:2611] [13/1] [__recompiles] Recompiling function torch_dynamo_resume_in_forward_at_157 in /work2/09808/mp46753/frontera/ML_Project/VQGraph/models.py:157
+V0421 04:10:29.315927 47277852992768 torch/_dynamo/guards.py:2611] [13/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:29.315927 47277852992768 torch/_dynamo/guards.py:2611] [13/1] [__recompiles]     - tensor 'L['h']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:29.357964 47277852992768 torch/_dynamo/guards.py:2611] [4/3] [__recompiles] Recompiling function create_unitgraph_from_coo in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph_index.py:1254
+V0421 04:10:29.357964 47277852992768 torch/_dynamo/guards.py:2611] [4/3] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:29.357964 47277852992768 torch/_dynamo/guards.py:2611] [4/3] [__recompiles]     - tensor 'L['row']' dispatch key set mismatch. expected DispatchKeySet(CPU, BackendSelect, ADInplaceOrView, AutogradCPU), actual DispatchKeySet(CUDA, BackendSelect, ADInplaceOrView, AutogradCUDA)
+V0421 04:10:29.357964 47277852992768 torch/_dynamo/guards.py:2611] [4/3] [__recompiles]     - L['num_dst'] == 2656                                        
+V0421 04:10:29.357964 47277852992768 torch/_dynamo/guards.py:2611] [4/3] [__recompiles]     - L['num_dst'] == 2656                                        
+V0421 04:10:29.391271 47277852992768 torch/_dynamo/guards.py:2611] [8/3] [__recompiles] Recompiling function torch_dynamo_resume_in_create_unitgraph_from_coo_at_1296 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph_index.py:1296
+V0421 04:10:29.391271 47277852992768 torch/_dynamo/guards.py:2611] [8/3] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:29.391271 47277852992768 torch/_dynamo/guards.py:2611] [8/3] [__recompiles]     - tensor 'L['col']' dispatch key set mismatch. expected DispatchKeySet(CPU, BackendSelect, ADInplaceOrView, AutogradCPU), actual DispatchKeySet(CUDA, BackendSelect, ADInplaceOrView, AutogradCUDA)
+V0421 04:10:29.391271 47277852992768 torch/_dynamo/guards.py:2611] [8/3] [__recompiles]     - L['___stack2'] == 2656                                      
+V0421 04:10:29.391271 47277852992768 torch/_dynamo/guards.py:2611] [8/3] [__recompiles]     - L['___stack2'] == 2656                                      
+V0421 04:10:29.405430 47277852992768 torch/_dynamo/guards.py:2611] [15/1] [__recompiles] Recompiling function _dispatch in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/utils/internal.py:65
+V0421 04:10:29.405430 47277852992768 torch/_dynamo/guards.py:2611] [15/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:29.405430 47277852992768 torch/_dynamo/guards.py:2611] [15/1] [__recompiles]     - L['data'][0] == 2656                                        
+V0421 04:10:32.944668 47277852992768 torch/_dynamo/guards.py:2611] [29/1] [__recompiles] Recompiling function torch_dynamo_resume_in_add_edges_at_572 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:572
+V0421 04:10:32.944668 47277852992768 torch/_dynamo/guards.py:2611] [29/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:32.944668 47277852992768 torch/_dynamo/guards.py:2611] [29/1] [__recompiles]     - L['___stack0'] == 2656                                      
+V0421 04:10:32.963398 47277852992768 torch/_dynamo/guards.py:2611] [30/2] [__recompiles] Recompiling function torch_dynamo_resume_in_add_edges_at_573 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:573
+V0421 04:10:32.963398 47277852992768 torch/_dynamo/guards.py:2611] [30/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:32.963398 47277852992768 torch/_dynamo/guards.py:2611] [30/2] [__recompiles]     - L['___stack0'] == 2656                                      
+V0421 04:10:32.963398 47277852992768 torch/_dynamo/guards.py:2611] [30/2] [__recompiles]     - tensor 'L['u']' size mismatch at index 0. expected 3921, actual 3884
+V0421 04:10:33.225030 47277852992768 torch/_dynamo/guards.py:2611] [34/3] [__recompiles] Recompiling function cat in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:222
+V0421 04:10:33.225030 47277852992768 torch/_dynamo/guards.py:2611] [34/3] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:33.225030 47277852992768 torch/_dynamo/guards.py:2611] [34/3] [__recompiles]     - 2 <= L['seq'][0].size()[0] <= 2147483645                      # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:33.225030 47277852992768 torch/_dynamo/guards.py:2611] [34/3] [__recompiles]     - tensor 'L['seq'][1]' size mismatch at index 0. expected 3921, actual 3884
+V0421 04:10:33.225030 47277852992768 torch/_dynamo/guards.py:2611] [34/3] [__recompiles]     - tensor 'L['seq'][1]' size mismatch at index 0. expected 3921, actual 3884
+V0421 04:10:33.461204 47277852992768 torch/_dynamo/guards.py:2611] [4/4] [__recompiles] Recompiling function create_unitgraph_from_coo in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph_index.py:1254
+V0421 04:10:33.461204 47277852992768 torch/_dynamo/guards.py:2611] [4/4] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:33.461204 47277852992768 torch/_dynamo/guards.py:2611] [4/4] [__recompiles]     - tensor 'L['row']' size mismatch at index 0. expected 0, actual 3884
+V0421 04:10:33.461204 47277852992768 torch/_dynamo/guards.py:2611] [4/4] [__recompiles]     - tensor 'L['row']' dispatch key set mismatch. expected DispatchKeySet(CPU, BackendSelect, ADInplaceOrView, AutogradCPU), actual DispatchKeySet(CUDA, BackendSelect, ADInplaceOrView, AutogradCUDA)
+V0421 04:10:33.461204 47277852992768 torch/_dynamo/guards.py:2611] [4/4] [__recompiles]     - L['num_dst'] == 2656                                        
+V0421 04:10:33.461204 47277852992768 torch/_dynamo/guards.py:2611] [4/4] [__recompiles]     - tensor 'L['row']' size mismatch at index 0. expected 0, actual 3884
+V0421 04:10:33.501276 47277852992768 torch/_dynamo/guards.py:2611] [8/4] [__recompiles] Recompiling function torch_dynamo_resume_in_create_unitgraph_from_coo_at_1296 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph_index.py:1296
+V0421 04:10:33.501276 47277852992768 torch/_dynamo/guards.py:2611] [8/4] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:33.501276 47277852992768 torch/_dynamo/guards.py:2611] [8/4] [__recompiles]     - tensor 'L['col']' size mismatch at index 0. expected 0, actual 3884
+V0421 04:10:33.501276 47277852992768 torch/_dynamo/guards.py:2611] [8/4] [__recompiles]     - tensor 'L['col']' dispatch key set mismatch. expected DispatchKeySet(CPU, BackendSelect, ADInplaceOrView, AutogradCPU), actual DispatchKeySet(CUDA, BackendSelect, ADInplaceOrView, AutogradCUDA)
+V0421 04:10:33.501276 47277852992768 torch/_dynamo/guards.py:2611] [8/4] [__recompiles]     - L['___stack2'] == 2656                                      
+V0421 04:10:33.501276 47277852992768 torch/_dynamo/guards.py:2611] [8/4] [__recompiles]     - tensor 'L['col']' size mismatch at index 0. expected 0, actual 3884
+V0421 04:10:33.522352 47277852992768 torch/_dynamo/guards.py:2611] [41/1] [__recompiles] Recompiling function spmatrix in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/sparse/sparse_matrix.py:763
+V0421 04:10:33.522352 47277852992768 torch/_dynamo/guards.py:2611] [41/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:33.522352 47277852992768 torch/_dynamo/guards.py:2611] [41/1] [__recompiles]     - tensor 'L['indices']' stride mismatch at index 0. expected 9412, actual 9338
+V0421 04:10:33.787287 47277852992768 torch/_dynamo/guards.py:2611] [47/1] [__recompiles] Recompiling function arange in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:406
+V0421 04:10:33.787287 47277852992768 torch/_dynamo/guards.py:2611] [47/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:33.787287 47277852992768 torch/_dynamo/guards.py:2611] [47/1] [__recompiles]     - L['stop'] == 2656                                           
+V0421 04:10:34.013504 47277852992768 torch/_dynamo/guards.py:2611] [48/1] [__recompiles] Recompiling function in_degrees in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph_index.py:702
+V0421 04:10:34.013504 47277852992768 torch/_dynamo/guards.py:2611] [48/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.013504 47277852992768 torch/_dynamo/guards.py:2611] [48/1] [__recompiles]     - tensor 'L['v']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.031935 47277852992768 torch/_dynamo/guards.py:2611] [50/1] [__recompiles] Recompiling function has_nodes in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:2878
+V0421 04:10:34.031935 47277852992768 torch/_dynamo/guards.py:2611] [50/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.031935 47277852992768 torch/_dynamo/guards.py:2611] [50/1] [__recompiles]     - tensor 'L['vid']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.048164 47277852992768 torch/_dynamo/guards.py:2611] [51/1] [__recompiles] Recompiling function torch_dynamo_resume_in_has_nodes_at_2925 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:2925
+V0421 04:10:34.048164 47277852992768 torch/_dynamo/guards.py:2611] [51/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.048164 47277852992768 torch/_dynamo/guards.py:2611] [51/1] [__recompiles]     - tensor 'L['___stack0']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.283957 47277852992768 torch/_dynamo/guards.py:2611] [52/1] [__recompiles] Recompiling function torch_dynamo_resume_in_has_nodes_at_2926 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:2926
+V0421 04:10:34.283957 47277852992768 torch/_dynamo/guards.py:2611] [52/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.283957 47277852992768 torch/_dynamo/guards.py:2611] [52/1] [__recompiles]     - tensor 'L['vid_tensor']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.307611 47277852992768 torch/_dynamo/guards.py:2611] [53/1] [__recompiles] Recompiling function has_nodes in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph_index.py:444
+V0421 04:10:34.307611 47277852992768 torch/_dynamo/guards.py:2611] [53/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.307611 47277852992768 torch/_dynamo/guards.py:2611] [53/1] [__recompiles]     - tensor 'L['vids']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.324543 47277852992768 torch/_dynamo/guards.py:2611] [54/1] [__recompiles] Recompiling function torch_dynamo_resume_in_has_nodes_at_2930 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:2930
+V0421 04:10:34.324543 47277852992768 torch/_dynamo/guards.py:2611] [54/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.324543 47277852992768 torch/_dynamo/guards.py:2611] [54/1] [__recompiles]     - tensor 'L['___stack0']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.551241 47277852992768 torch/_dynamo/guards.py:2611] [55/1] [__recompiles] Recompiling function sum in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:152
+V0421 04:10:34.551241 47277852992768 torch/_dynamo/guards.py:2611] [55/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.551241 47277852992768 torch/_dynamo/guards.py:2611] [55/1] [__recompiles]     - tensor 'L['input']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.632073 47277852992768 torch/_dynamo/guards.py:2611] [57/2] [__recompiles] Recompiling function __setitem__ in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/view.py:82
+V0421 04:10:34.632073 47277852992768 torch/_dynamo/guards.py:2611] [57/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.632073 47277852992768 torch/_dynamo/guards.py:2611] [57/2] [__recompiles]     - tensor 'L['val']' requires_grad mismatch. expected requires_grad=1
+V0421 04:10:34.632073 47277852992768 torch/_dynamo/guards.py:2611] [57/2] [__recompiles]     - tensor 'L['val']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.650246 47277852992768 torch/_dynamo/guards.py:2611] [61/2] [__recompiles] Recompiling function __setitem__ in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/frame.py:690
+V0421 04:10:34.650246 47277852992768 torch/_dynamo/guards.py:2611] [61/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.650246 47277852992768 torch/_dynamo/guards.py:2611] [61/2] [__recompiles]     - tensor 'L['data']' requires_grad mismatch. expected requires_grad=1
+V0421 04:10:34.650246 47277852992768 torch/_dynamo/guards.py:2611] [61/2] [__recompiles]     - tensor 'L['data']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.668558 47277852992768 torch/_dynamo/guards.py:2611] [62/2] [__recompiles] Recompiling function update_column in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/frame.py:772
+V0421 04:10:34.668558 47277852992768 torch/_dynamo/guards.py:2611] [62/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.668558 47277852992768 torch/_dynamo/guards.py:2611] [62/2] [__recompiles]     - tensor 'L['data']' requires_grad mismatch. expected requires_grad=1
+V0421 04:10:34.668558 47277852992768 torch/_dynamo/guards.py:2611] [62/2] [__recompiles]     - tensor 'L['data']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.687420 47277852992768 torch/_dynamo/guards.py:2611] [63/2] [__recompiles] Recompiling function create in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/frame.py:472
+V0421 04:10:34.687420 47277852992768 torch/_dynamo/guards.py:2611] [63/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.687420 47277852992768 torch/_dynamo/guards.py:2611] [63/2] [__recompiles]     - tensor 'L['data']' requires_grad mismatch. expected requires_grad=1
+V0421 04:10:34.687420 47277852992768 torch/_dynamo/guards.py:2611] [63/2] [__recompiles]     - tensor 'L['data']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.704062 47277852992768 torch/_dynamo/guards.py:2611] [64/2] [__recompiles] Recompiling function __init__ in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/frame.py:210
+V0421 04:10:34.704062 47277852992768 torch/_dynamo/guards.py:2611] [64/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.704062 47277852992768 torch/_dynamo/guards.py:2611] [64/2] [__recompiles]     - tensor 'L['storage']' requires_grad mismatch. expected requires_grad=1
+V0421 04:10:34.704062 47277852992768 torch/_dynamo/guards.py:2611] [64/2] [__recompiles]     - tensor 'L['storage']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.723645 47277852992768 torch/_dynamo/guards.py:2611] [65/2] [__recompiles] Recompiling function infer_scheme in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/frame.py:151
+V0421 04:10:34.723645 47277852992768 torch/_dynamo/guards.py:2611] [65/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.723645 47277852992768 torch/_dynamo/guards.py:2611] [65/2] [__recompiles]     - tensor 'L['tensor']' requires_grad mismatch. expected requires_grad=1
+V0421 04:10:34.723645 47277852992768 torch/_dynamo/guards.py:2611] [65/2] [__recompiles]     - tensor 'L['tensor']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.773462 47277852992768 torch/_dynamo/guards.py:2611] [68/2] [__recompiles] Recompiling function func in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/ops/spmm.py:213
+V0421 04:10:34.773462 47277852992768 torch/_dynamo/guards.py:2611] [68/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.773462 47277852992768 torch/_dynamo/guards.py:2611] [68/2] [__recompiles]     - tensor 'L['x']' requires_grad mismatch. expected requires_grad=1
+V0421 04:10:34.773462 47277852992768 torch/_dynamo/guards.py:2611] [68/2] [__recompiles]     - tensor 'L['x']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.790390 47277852992768 torch/_dynamo/guards.py:2611] [70/2] [__recompiles] Recompiling function torch_dynamo_resume_in_gspmm_at_75 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/ops/spmm.py:75
+V0421 04:10:34.790390 47277852992768 torch/_dynamo/guards.py:2611] [70/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.790390 47277852992768 torch/_dynamo/guards.py:2611] [70/2] [__recompiles]     - tensor 'L['lhs_data']' requires_grad mismatch. expected requires_grad=1
+V0421 04:10:34.790390 47277852992768 torch/_dynamo/guards.py:2611] [70/2] [__recompiles]     - tensor 'L['lhs_data']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.808497 47277852992768 torch/_dynamo/guards.py:2611] [74/2] [__recompiles] Recompiling function forward in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/sparse.py:163
+V0421 04:10:34.808497 47277852992768 torch/_dynamo/guards.py:2611] [74/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.808497 47277852992768 torch/_dynamo/guards.py:2611] [74/2] [__recompiles]     - tensor 'L['X']' requires_grad mismatch. expected requires_grad=1
+V0421 04:10:34.808497 47277852992768 torch/_dynamo/guards.py:2611] [74/2] [__recompiles]     - tensor 'L['X']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:34.824560 47277852992768 torch/_dynamo/guards.py:2611] [77/2] [__recompiles] Recompiling function zeros in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:287
+V0421 04:10:34.824560 47277852992768 torch/_dynamo/guards.py:2611] [77/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:34.824560 47277852992768 torch/_dynamo/guards.py:2611] [77/2] [__recompiles]     - L['shape'][0] == 2656                                       
+V0421 04:10:34.824560 47277852992768 torch/_dynamo/guards.py:2611] [77/2] [__recompiles]     - L['shape'][0] == 2656                                       
+V0421 04:10:35.000328 47277852992768 torch/_dynamo/guards.py:2611] [79/2] [__recompiles] Recompiling function zerocopy_to_dgl_ndarray_for_write in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:454
+V0421 04:10:35.000328 47277852992768 torch/_dynamo/guards.py:2611] [79/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:35.000328 47277852992768 torch/_dynamo/guards.py:2611] [79/2] [__recompiles]     - tensor 'L['input']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:35.000328 47277852992768 torch/_dynamo/guards.py:2611] [79/2] [__recompiles]     - tensor 'L['input']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:35.042185 47277852992768 torch/_dynamo/guards.py:2611] [80/2] [__recompiles] Recompiling function check_is_view in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:441
+V0421 04:10:35.042185 47277852992768 torch/_dynamo/guards.py:2611] [80/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:35.042185 47277852992768 torch/_dynamo/guards.py:2611] [80/2] [__recompiles]     - tensor 'L['input']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:35.042185 47277852992768 torch/_dynamo/guards.py:2611] [80/2] [__recompiles]     - tensor 'L['input']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:35.053691 47277852992768 torch/_dynamo/guards.py:2611] [81/2] [__recompiles] Recompiling function torch_dynamo_resume_in_check_is_view_at_443 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:443
+V0421 04:10:35.053691 47277852992768 torch/_dynamo/guards.py:2611] [81/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:35.053691 47277852992768 torch/_dynamo/guards.py:2611] [81/2] [__recompiles]     - tensor 'L['input']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:35.053691 47277852992768 torch/_dynamo/guards.py:2611] [81/2] [__recompiles]     - tensor 'L['input']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:35.066384 47277852992768 torch/_dynamo/guards.py:2611] [82/2] [__recompiles] Recompiling function torch_dynamo_resume_in_zerocopy_to_dgl_ndarray_for_write_at_461 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/tensor.py:461
+V0421 04:10:35.066384 47277852992768 torch/_dynamo/guards.py:2611] [82/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:35.066384 47277852992768 torch/_dynamo/guards.py:2611] [82/2] [__recompiles]     - tensor 'L['input']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:35.066384 47277852992768 torch/_dynamo/guards.py:2611] [82/2] [__recompiles]     - tensor 'L['input']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:35.083110 47277852992768 torch/_dynamo/guards.py:2611] [88/1] [__recompiles] Recompiling function forward in /work2/09808/mp46753/frontera/ML_Project/VQGraph/vq.py:569
+V0421 04:10:35.083110 47277852992768 torch/_dynamo/guards.py:2611] [88/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:35.083110 47277852992768 torch/_dynamo/guards.py:2611] [88/1] [__recompiles]     - tensor 'L['x']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:35.175921 47277852992768 torch/_dynamo/guards.py:2611] [89/1] [__recompiles] Recompiling function torch_dynamo_resume_in_forward_at_590 in /work2/09808/mp46753/frontera/ML_Project/VQGraph/vq.py:590
+V0421 04:10:35.175921 47277852992768 torch/_dynamo/guards.py:2611] [89/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:35.175921 47277852992768 torch/_dynamo/guards.py:2611] [89/1] [__recompiles]     - tensor 'L['___stack0']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:35.238645 47277852992768 torch/_dynamo/guards.py:2611] [90/1] [__recompiles] Recompiling function forward in /work2/09808/mp46753/frontera/ML_Project/VQGraph/vq.py:418
+V0421 04:10:35.238645 47277852992768 torch/_dynamo/guards.py:2611] [90/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:35.238645 47277852992768 torch/_dynamo/guards.py:2611] [90/1] [__recompiles]     - tensor 'L['x']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:35.861726 47277852992768 torch/_dynamo/guards.py:2611] [93/1] [__recompiles] Recompiling function torch_dynamo_resume_in_forward_at_432 in /work2/09808/mp46753/frontera/ML_Project/VQGraph/vq.py:432
+V0421 04:10:35.861726 47277852992768 torch/_dynamo/guards.py:2611] [93/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:35.861726 47277852992768 torch/_dynamo/guards.py:2611] [93/1] [__recompiles]     - L['shape'][1] == 2656                                       
+V0421 04:10:37.142052 47277852992768 torch/_dynamo/guards.py:2611] [94/1] [__recompiles] Recompiling function torch_dynamo_resume_in_forward_at_595 in /work2/09808/mp46753/frontera/ML_Project/VQGraph/vq.py:595
+V0421 04:10:37.142052 47277852992768 torch/_dynamo/guards.py:2611] [94/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:37.142052 47277852992768 torch/_dynamo/guards.py:2611] [94/1] [__recompiles]     - tensor 'L['x']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:37.395966 47277852992768 torch/_dynamo/guards.py:2611] [95/1] [__recompiles] Recompiling function torch_dynamo_resume_in_forward_at_604 in /work2/09808/mp46753/frontera/ML_Project/VQGraph/vq.py:604
+V0421 04:10:37.395966 47277852992768 torch/_dynamo/guards.py:2611] [95/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:37.395966 47277852992768 torch/_dynamo/guards.py:2611] [95/1] [__recompiles]     - tensor 'L['x']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:38.134876 47277852992768 torch/_dynamo/guards.py:2611] [96/1] [__recompiles] Recompiling function torch_dynamo_resume_in_forward_at_648 in /work2/09808/mp46753/frontera/ML_Project/VQGraph/vq.py:648
+V0421 04:10:38.134876 47277852992768 torch/_dynamo/guards.py:2611] [96/1] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:38.134876 47277852992768 torch/_dynamo/guards.py:2611] [96/1] [__recompiles]     - tensor 'L['___stack0']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:38.237990 47277852992768 torch/_dynamo/guards.py:2611] [57/3] [__recompiles] Recompiling function __setitem__ in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/view.py:82
+V0421 04:10:38.237990 47277852992768 torch/_dynamo/guards.py:2611] [57/3] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:38.237990 47277852992768 torch/_dynamo/guards.py:2611] [57/3] [__recompiles]     - tensor 'L['val']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.237990 47277852992768 torch/_dynamo/guards.py:2611] [57/3] [__recompiles]     - tensor 'L['val']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:38.237990 47277852992768 torch/_dynamo/guards.py:2611] [57/3] [__recompiles]     - tensor 'L['val']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.258516 47277852992768 torch/_dynamo/guards.py:2611] [61/3] [__recompiles] Recompiling function __setitem__ in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/frame.py:690
+V0421 04:10:38.258516 47277852992768 torch/_dynamo/guards.py:2611] [61/3] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:38.258516 47277852992768 torch/_dynamo/guards.py:2611] [61/3] [__recompiles]     - tensor 'L['data']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.258516 47277852992768 torch/_dynamo/guards.py:2611] [61/3] [__recompiles]     - tensor 'L['data']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:38.258516 47277852992768 torch/_dynamo/guards.py:2611] [61/3] [__recompiles]     - tensor 'L['data']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.280032 47277852992768 torch/_dynamo/guards.py:2611] [62/3] [__recompiles] Recompiling function update_column in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/frame.py:772
+V0421 04:10:38.280032 47277852992768 torch/_dynamo/guards.py:2611] [62/3] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:38.280032 47277852992768 torch/_dynamo/guards.py:2611] [62/3] [__recompiles]     - tensor 'L['data']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.280032 47277852992768 torch/_dynamo/guards.py:2611] [62/3] [__recompiles]     - tensor 'L['data']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:38.280032 47277852992768 torch/_dynamo/guards.py:2611] [62/3] [__recompiles]     - tensor 'L['data']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.301027 47277852992768 torch/_dynamo/guards.py:2611] [63/3] [__recompiles] Recompiling function create in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/frame.py:472
+V0421 04:10:38.301027 47277852992768 torch/_dynamo/guards.py:2611] [63/3] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:38.301027 47277852992768 torch/_dynamo/guards.py:2611] [63/3] [__recompiles]     - tensor 'L['data']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.301027 47277852992768 torch/_dynamo/guards.py:2611] [63/3] [__recompiles]     - tensor 'L['data']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:38.301027 47277852992768 torch/_dynamo/guards.py:2611] [63/3] [__recompiles]     - tensor 'L['data']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.319946 47277852992768 torch/_dynamo/guards.py:2611] [64/3] [__recompiles] Recompiling function __init__ in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/frame.py:210
+V0421 04:10:38.319946 47277852992768 torch/_dynamo/guards.py:2611] [64/3] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:38.319946 47277852992768 torch/_dynamo/guards.py:2611] [64/3] [__recompiles]     - tensor 'L['storage']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.319946 47277852992768 torch/_dynamo/guards.py:2611] [64/3] [__recompiles]     - tensor 'L['storage']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:38.319946 47277852992768 torch/_dynamo/guards.py:2611] [64/3] [__recompiles]     - tensor 'L['storage']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.341051 47277852992768 torch/_dynamo/guards.py:2611] [65/3] [__recompiles] Recompiling function infer_scheme in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/frame.py:151
+V0421 04:10:38.341051 47277852992768 torch/_dynamo/guards.py:2611] [65/3] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:38.341051 47277852992768 torch/_dynamo/guards.py:2611] [65/3] [__recompiles]     - tensor 'L['tensor']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.341051 47277852992768 torch/_dynamo/guards.py:2611] [65/3] [__recompiles]     - tensor 'L['tensor']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:38.341051 47277852992768 torch/_dynamo/guards.py:2611] [65/3] [__recompiles]     - tensor 'L['tensor']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.389910 47277852992768 torch/_dynamo/guards.py:2611] [68/3] [__recompiles] Recompiling function func in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/ops/spmm.py:213
+V0421 04:10:38.389910 47277852992768 torch/_dynamo/guards.py:2611] [68/3] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:38.389910 47277852992768 torch/_dynamo/guards.py:2611] [68/3] [__recompiles]     - tensor 'L['x']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.389910 47277852992768 torch/_dynamo/guards.py:2611] [68/3] [__recompiles]     - tensor 'L['x']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:38.389910 47277852992768 torch/_dynamo/guards.py:2611] [68/3] [__recompiles]     - tensor 'L['x']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.404529 47277852992768 torch/_dynamo/guards.py:2611] [70/3] [__recompiles] Recompiling function torch_dynamo_resume_in_gspmm_at_75 in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/ops/spmm.py:75
+V0421 04:10:38.404529 47277852992768 torch/_dynamo/guards.py:2611] [70/3] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:38.404529 47277852992768 torch/_dynamo/guards.py:2611] [70/3] [__recompiles]     - tensor 'L['lhs_data']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.404529 47277852992768 torch/_dynamo/guards.py:2611] [70/3] [__recompiles]     - tensor 'L['lhs_data']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:38.404529 47277852992768 torch/_dynamo/guards.py:2611] [70/3] [__recompiles]     - tensor 'L['lhs_data']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.423272 47277852992768 torch/_dynamo/guards.py:2611] [74/3] [__recompiles] Recompiling function forward in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/backend/pytorch/sparse.py:163
+V0421 04:10:38.423272 47277852992768 torch/_dynamo/guards.py:2611] [74/3] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:38.423272 47277852992768 torch/_dynamo/guards.py:2611] [74/3] [__recompiles]     - tensor 'L['X']' requires_grad mismatch. expected requires_grad=0
+V0421 04:10:38.423272 47277852992768 torch/_dynamo/guards.py:2611] [74/3] [__recompiles]     - tensor 'L['X']' size mismatch at index 0. expected 2656, actual 2632
+V0421 04:10:38.423272 47277852992768 torch/_dynamo/guards.py:2611] [74/3] [__recompiles]     - tensor 'L['X']' requires_grad mismatch. expected requires_grad=0
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/dataloading/dataloader.py:1144: DGLWarning: Dataloader CPU affinity opt is not enabled, consider switching it on (see enable_cpu_affinity() or CPU best practices for DGL [https://docs.dgl.ai/tutorials/cpu/cpu_best_practises.html])
+  dgl_warning(
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:92: DGLWarning: Recommend creating graphs by `dgl.graph(data)` instead of `dgl.DGLGraph(data)`.
+  dgl_warning(
+V0421 04:10:38.844525 47277852992768 torch/_dynamo/guards.py:2611] [15/2] [__recompiles] Recompiling function _dispatch in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/utils/internal.py:65
+V0421 04:10:38.844525 47277852992768 torch/_dynamo/guards.py:2611] [15/2] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:38.844525 47277852992768 torch/_dynamo/guards.py:2611] [15/2] [__recompiles]     - L['data'][0] == 2632                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:38.844525 47277852992768 torch/_dynamo/guards.py:2611] [15/2] [__recompiles]     - L['data'][0] == 2656                                        
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/dataloading/dataloader.py:1144: DGLWarning: Dataloader CPU affinity opt is not enabled, consider switching it on (see enable_cpu_affinity() or CPU best practices for DGL [https://docs.dgl.ai/tutorials/cpu/cpu_best_practises.html])
+  dgl_warning(
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:92: DGLWarning: Recommend creating graphs by `dgl.graph(data)` instead of `dgl.DGLGraph(data)`.
+  dgl_warning(
+V0421 04:10:42.502259 47277852992768 torch/_dynamo/guards.py:2611] [15/3] [__recompiles] Recompiling function _dispatch in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/utils/internal.py:65
+V0421 04:10:42.502259 47277852992768 torch/_dynamo/guards.py:2611] [15/3] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:42.502259 47277852992768 torch/_dynamo/guards.py:2611] [15/3] [__recompiles]     - L['data'][0] == 2708                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:42.502259 47277852992768 torch/_dynamo/guards.py:2611] [15/3] [__recompiles]     - L['data'][0] == 2632                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:42.502259 47277852992768 torch/_dynamo/guards.py:2611] [15/3] [__recompiles]     - L['data'][0] == 2656                                        
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/dataloading/dataloader.py:1144: DGLWarning: Dataloader CPU affinity opt is not enabled, consider switching it on (see enable_cpu_affinity() or CPU best practices for DGL [https://docs.dgl.ai/tutorials/cpu/cpu_best_practises.html])
+  dgl_warning(
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:92: DGLWarning: Recommend creating graphs by `dgl.graph(data)` instead of `dgl.DGLGraph(data)`.
+  dgl_warning(
+V0421 04:10:46.163568 47277852992768 torch/_dynamo/guards.py:2611] [15/4] [__recompiles] Recompiling function _dispatch in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/utils/internal.py:65
+V0421 04:10:46.163568 47277852992768 torch/_dynamo/guards.py:2611] [15/4] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:46.163568 47277852992768 torch/_dynamo/guards.py:2611] [15/4] [__recompiles]     - L['data'][0] == 2662                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:46.163568 47277852992768 torch/_dynamo/guards.py:2611] [15/4] [__recompiles]     - L['data'][0] == 2708                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:46.163568 47277852992768 torch/_dynamo/guards.py:2611] [15/4] [__recompiles]     - L['data'][0] == 2632                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:46.163568 47277852992768 torch/_dynamo/guards.py:2611] [15/4] [__recompiles]     - L['data'][0] == 2656                                        
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/dataloading/dataloader.py:1144: DGLWarning: Dataloader CPU affinity opt is not enabled, consider switching it on (see enable_cpu_affinity() or CPU best practices for DGL [https://docs.dgl.ai/tutorials/cpu/cpu_best_practises.html])
+  dgl_warning(
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:92: DGLWarning: Recommend creating graphs by `dgl.graph(data)` instead of `dgl.DGLGraph(data)`.
+  dgl_warning(
+V0421 04:10:49.828834 47277852992768 torch/_dynamo/guards.py:2611] [15/5] [__recompiles] Recompiling function _dispatch in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/utils/internal.py:65
+V0421 04:10:49.828834 47277852992768 torch/_dynamo/guards.py:2611] [15/5] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:49.828834 47277852992768 torch/_dynamo/guards.py:2611] [15/5] [__recompiles]     - L['data'][0] == 2659                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:49.828834 47277852992768 torch/_dynamo/guards.py:2611] [15/5] [__recompiles]     - L['data'][0] == 2662                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:49.828834 47277852992768 torch/_dynamo/guards.py:2611] [15/5] [__recompiles]     - L['data'][0] == 2708                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:49.828834 47277852992768 torch/_dynamo/guards.py:2611] [15/5] [__recompiles]     - L['data'][0] == 2632                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:49.828834 47277852992768 torch/_dynamo/guards.py:2611] [15/5] [__recompiles]     - L['data'][0] == 2656                                        
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/dataloading/dataloader.py:1144: DGLWarning: Dataloader CPU affinity opt is not enabled, consider switching it on (see enable_cpu_affinity() or CPU best practices for DGL [https://docs.dgl.ai/tutorials/cpu/cpu_best_practises.html])
+  dgl_warning(
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:92: DGLWarning: Recommend creating graphs by `dgl.graph(data)` instead of `dgl.DGLGraph(data)`.
+  dgl_warning(
+V0421 04:10:53.462924 47277852992768 torch/_dynamo/guards.py:2611] [15/6] [__recompiles] Recompiling function _dispatch in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/utils/internal.py:65
+V0421 04:10:53.462924 47277852992768 torch/_dynamo/guards.py:2611] [15/6] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:53.462924 47277852992768 torch/_dynamo/guards.py:2611] [15/6] [__recompiles]     - L['data'][0] == 2647                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:53.462924 47277852992768 torch/_dynamo/guards.py:2611] [15/6] [__recompiles]     - L['data'][0] == 2659                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:53.462924 47277852992768 torch/_dynamo/guards.py:2611] [15/6] [__recompiles]     - L['data'][0] == 2662                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:53.462924 47277852992768 torch/_dynamo/guards.py:2611] [15/6] [__recompiles]     - L['data'][0] == 2708                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:53.462924 47277852992768 torch/_dynamo/guards.py:2611] [15/6] [__recompiles]     - L['data'][0] == 2632                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:53.462924 47277852992768 torch/_dynamo/guards.py:2611] [15/6] [__recompiles]     - L['data'][0] == 2656                                        
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/dataloading/dataloader.py:1144: DGLWarning: Dataloader CPU affinity opt is not enabled, consider switching it on (see enable_cpu_affinity() or CPU best practices for DGL [https://docs.dgl.ai/tutorials/cpu/cpu_best_practises.html])
+  dgl_warning(
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:92: DGLWarning: Recommend creating graphs by `dgl.graph(data)` instead of `dgl.DGLGraph(data)`.
+  dgl_warning(
+V0421 04:10:57.159836 47277852992768 torch/_dynamo/guards.py:2611] [15/7] [__recompiles] Recompiling function _dispatch in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/utils/internal.py:65
+V0421 04:10:57.159836 47277852992768 torch/_dynamo/guards.py:2611] [15/7] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:10:57.159836 47277852992768 torch/_dynamo/guards.py:2611] [15/7] [__recompiles]     - L['data'][0] == 2639                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:57.159836 47277852992768 torch/_dynamo/guards.py:2611] [15/7] [__recompiles]     - L['data'][0] == 2647                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:57.159836 47277852992768 torch/_dynamo/guards.py:2611] [15/7] [__recompiles]     - L['data'][0] == 2659                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:57.159836 47277852992768 torch/_dynamo/guards.py:2611] [15/7] [__recompiles]     - L['data'][0] == 2662                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:57.159836 47277852992768 torch/_dynamo/guards.py:2611] [15/7] [__recompiles]     - L['data'][0] == 2708                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:57.159836 47277852992768 torch/_dynamo/guards.py:2611] [15/7] [__recompiles]     - L['data'][0] == 2632                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:10:57.159836 47277852992768 torch/_dynamo/guards.py:2611] [15/7] [__recompiles]     - L['data'][0] == 2656                                        
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/dataloading/dataloader.py:1144: DGLWarning: Dataloader CPU affinity opt is not enabled, consider switching it on (see enable_cpu_affinity() or CPU best practices for DGL [https://docs.dgl.ai/tutorials/cpu/cpu_best_practises.html])
+  dgl_warning(
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:92: DGLWarning: Recommend creating graphs by `dgl.graph(data)` instead of `dgl.DGLGraph(data)`.
+  dgl_warning(
+V0421 04:11:00.854033 47277852992768 torch/_dynamo/guards.py:2611] [15/8] [__recompiles] Recompiling function _dispatch in /work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/utils/internal.py:65
+V0421 04:11:00.854033 47277852992768 torch/_dynamo/guards.py:2611] [15/8] [__recompiles]     triggered by the following guard failure(s):
+V0421 04:11:00.854033 47277852992768 torch/_dynamo/guards.py:2611] [15/8] [__recompiles]     - L['data'][0] == 2650                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:11:00.854033 47277852992768 torch/_dynamo/guards.py:2611] [15/8] [__recompiles]     - L['data'][0] == 2639                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:11:00.854033 47277852992768 torch/_dynamo/guards.py:2611] [15/8] [__recompiles]     - L['data'][0] == 2647                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:11:00.854033 47277852992768 torch/_dynamo/guards.py:2611] [15/8] [__recompiles]     - L['data'][0] == 2659                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:11:00.854033 47277852992768 torch/_dynamo/guards.py:2611] [15/8] [__recompiles]     - L['data'][0] == 2662                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:11:00.854033 47277852992768 torch/_dynamo/guards.py:2611] [15/8] [__recompiles]     - L['data'][0] == 2708                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:11:00.854033 47277852992768 torch/_dynamo/guards.py:2611] [15/8] [__recompiles]     - L['data'][0] == 2632                                          # _dynamo/output_graph.py:452 in init_ambient_guards
+V0421 04:11:00.854033 47277852992768 torch/_dynamo/guards.py:2611] [15/8] [__recompiles]     - L['data'][0] == 2656                                        
+W0421 04:11:00.854264 47277852992768 torch/_dynamo/convert_frame.py:762] [15/8] torch._dynamo hit config.cache_size_limit (8)
+W0421 04:11:00.854264 47277852992768 torch/_dynamo/convert_frame.py:762] [15/8]    function: '_dispatch' (/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/utils/internal.py:65)
+W0421 04:11:00.854264 47277852992768 torch/_dynamo/convert_frame.py:762] [15/8]    last reason: L['data'][0] == 2656                                        
+W0421 04:11:00.854264 47277852992768 torch/_dynamo/convert_frame.py:762] [15/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W0421 04:11:00.854264 47277852992768 torch/_dynamo/convert_frame.py:762] [15/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/dataloading/dataloader.py:1144: DGLWarning: Dataloader CPU affinity opt is not enabled, consider switching it on (see enable_cpu_affinity() or CPU best practices for DGL [https://docs.dgl.ai/tutorials/cpu/cpu_best_practises.html])
+  dgl_warning(
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:92: DGLWarning: Recommend creating graphs by `dgl.graph(data)` instead of `dgl.DGLGraph(data)`.
+  dgl_warning(
+Compiling model with torch.compile()...
+Saved sparsity snapshot to outputs_compiled/tran/a-photo/SAGE/seed_1/sparsity_before.csv
+                               layer_name  num_elements   sparsity
+0  _orig_mod.encoder.graph_layer_1.weight        555025    0.00018
+1    _orig_mod.encoder.graph_layer_1.bias           745  100.00000
+2  _orig_mod.encoder.graph_layer_2.weight         95360    0.00000
+3    _orig_mod.encoder.graph_layer_2.bias           128  100.00000
+4      _orig_mod.encoder.decoder_1.weight        555025    0.00000
+5        _orig_mod.encoder.decoder_1.bias           745    0.00000
+6      _orig_mod.encoder.decoder_2.weight        555025    0.00000
+7        _orig_mod.encoder.decoder_2.bias           745    0.00000
+8         _orig_mod.encoder.linear.weight          1024    0.00000
+9           _orig_mod.encoder.linear.bias             8    0.00000
+Saved sparsity snapshot to outputs_compiled/tran/a-photo/SAGE/seed_1/sparsity_after.csv
+                               layer_name  num_elements   sparsity
+0  _orig_mod.encoder.graph_layer_1.weight        555025  21.706410
+1    _orig_mod.encoder.graph_layer_1.bias           745  11.812081
+2  _orig_mod.encoder.graph_layer_2.weight         95360  22.031250
+3    _orig_mod.encoder.graph_layer_2.bias           128   0.000000
+4      _orig_mod.encoder.decoder_1.weight        555025  51.160759
+5        _orig_mod.encoder.decoder_1.bias           745   0.000000
+6      _orig_mod.encoder.decoder_2.weight        555025  83.041485
+7        _orig_mod.encoder.decoder_2.bias           745  49.798658
+8         _orig_mod.encoder.linear.weight          1024   0.585938
+9           _orig_mod.encoder.linear.bias             8   0.000000
+Saved forward timing report to outputs_compiled/tran/a-photo/SAGE/seed_1/forward_times.csv
+                         layer_name  avg_forward_time_ms  num_calls
+0         _orig_mod.encoder.dropout             0.001003       8015
+1   _orig_mod.encoder.graph_layer_1             0.001335       8015
+2   _orig_mod.encoder.graph_layer_2             0.001120       8015
+3       _orig_mod.encoder.decoder_1             0.001081       8015
+4       _orig_mod.encoder.decoder_2             0.001061       8015
+5          _orig_mod.encoder.linear             0.000403       8015
+6   _orig_mod.encoder.vq.project_in             0.000992       8015
+7  _orig_mod.encoder.vq.project_out             0.001144       8015
+8    _orig_mod.encoder.vq._codebook             0.001518       8015
+CPU Memory Usage: 1265.90 MB
+Max GPU Memory Used: 1281.33 MB

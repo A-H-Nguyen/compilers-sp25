@@ -45,9 +45,13 @@ conda activate txgnn_env
 cd VQGraph
 
 srun python3 run_vqgraph_sweep.py \
-  --datasets citeseer ogbn-arxiv \
+  --datasets cora citeseer pubmed a-computer a-photo \
+             ogbn-arxiv ogbn-products \
+             pokec penn94 \
+             house_class vk_class \
   --teachers GCN SAGE \
   --seeds 0 1 2 \
   --device 0
+
 
 # ---------------------------------------------------

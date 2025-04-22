@@ -1,0 +1,45 @@
+/work2/09808/mp46753/frontera/ML_Project/VQGraph/vq.py:283: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled=False)
+/work2/09808/mp46753/frontera/ML_Project/VQGraph/vq.py:418: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled=False)
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/dataloading/dataloader.py:1144: DGLWarning: Dataloader CPU affinity opt is not enabled, consider switching it on (see enable_cpu_affinity() or CPU best practices for DGL [https://docs.dgl.ai/tutorials/cpu/cpu_best_practises.html])
+  dgl_warning(
+/work2/09808/mp46753/frontera/ML_Project/miniconda3/envs/txgnn_env/lib/python3.8/site-packages/dgl/heterograph.py:92: DGLWarning: Recommend creating graphs by `dgl.graph(data)` instead of `dgl.DGLGraph(data)`.
+  dgl_warning(
+Saved sparsity snapshot to outputs_eager/tran/a-photo/SAGE/seed_2/sparsity_before.csv
+                     layer_name  num_elements   sparsity
+0  encoder.graph_layer_1.weight        555025    0.00000
+1    encoder.graph_layer_1.bias           745  100.00000
+2  encoder.graph_layer_2.weight         95360    0.00000
+3    encoder.graph_layer_2.bias           128  100.00000
+4      encoder.decoder_1.weight        555025    0.00000
+5        encoder.decoder_1.bias           745    0.00000
+6      encoder.decoder_2.weight        555025    0.00018
+7        encoder.decoder_2.bias           745    0.00000
+8         encoder.linear.weight          1024    0.00000
+9           encoder.linear.bias             8    0.00000
+Saved sparsity snapshot to outputs_eager/tran/a-photo/SAGE/seed_2/sparsity_after.csv
+                     layer_name  num_elements   sparsity
+0  encoder.graph_layer_1.weight        555025   5.546417
+1    encoder.graph_layer_1.bias           745   1.610738
+2  encoder.graph_layer_2.weight         95360  12.312290
+3    encoder.graph_layer_2.bias           128   0.000000
+4      encoder.decoder_1.weight        555025  51.829557
+5        encoder.decoder_1.bias           745   0.000000
+6      encoder.decoder_2.weight        555025  88.691681
+7        encoder.decoder_2.bias           745  55.436242
+8         encoder.linear.weight          1024   0.292969
+9           encoder.linear.bias             8   0.000000
+Saved forward timing report to outputs_eager/tran/a-photo/SAGE/seed_2/forward_times.csv
+               layer_name  avg_forward_time_ms  num_calls
+0         encoder.dropout             0.000157       8015
+1   encoder.graph_layer_1             0.000262       8015
+2   encoder.graph_layer_2             0.000262       8015
+3       encoder.decoder_1             0.000221       8015
+4       encoder.decoder_2             0.000217       8015
+5          encoder.linear             0.000211       8015
+6   encoder.vq.project_in             0.000147       8015
+7  encoder.vq.project_out             0.000230       8015
+8    encoder.vq._codebook             0.000245       8015
+CPU Memory Usage: 1294.47 MB
+Max GPU Memory Used: 1282.07 MB

@@ -1,0 +1,10 @@
+layer_name,avg_forward_time_ms,num_calls
+_orig_mod.encoder.dropout,0.001002540268673238,8015
+_orig_mod.encoder.graph_layer_1,0.0013347847168743425,8015
+_orig_mod.encoder.graph_layer_2,0.00112004682981756,8015
+_orig_mod.encoder.decoder_1,0.0010808630156808917,8015
+_orig_mod.encoder.decoder_2,0.0010605666325128383,8015
+_orig_mod.encoder.linear,0.0004030765264910307,8015
+_orig_mod.encoder.vq.project_in,0.0009916392483249427,8015
+_orig_mod.encoder.vq.project_out,0.001143550451470775,8015
+_orig_mod.encoder.vq._codebook,0.0015184435765685993,8015

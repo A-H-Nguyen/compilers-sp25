@@ -141,6 +141,25 @@ def run(args):
         "gpu_mem_mb": gpu_mem
     }]).to_csv(output_dir / "summary_runtime_memory.csv", index=False)
 
+ #   # === Save outputs ===
+ #   np.savez(output_dir / "tea_soft_labels.npz", out.detach().cpu().numpy())
+ #   np.savez(output_dir / "codebook_embeddings.npz", codebook.detach().cpu().numpy())
+
+ #   soft_token_assignments = dist["soft_token_assignments"]
+ #   if isinstance(soft_token_assignments, torch.Tensor):
+        # Directly save 2D tensor
+ #       np.savez(output_dir / "tea_soft_token_assignments.npz", soft_token_assignments.detach().cpu().numpy())
+ #   elif isinstance(soft_token_assignments, list):
+ #       try:
+            # Try to concatenate in case it's a list of tensors
+ #           merged = torch.cat(soft_token_assignments, dim=0)
+ #           np.savez(output_dir / "tea_soft_token_assignments.npz", merged.detach().cpu().numpy())
+ #       except Exception as e:
+ #           raise ValueError(f"Cannot concatenate soft_token_assignments list: {e}")
+ #   else:
+ #       raise TypeError("soft_token_assignments must be a Tensor or list of Tensors")
+                
+
     for h in hooks:
         h.remove()
 

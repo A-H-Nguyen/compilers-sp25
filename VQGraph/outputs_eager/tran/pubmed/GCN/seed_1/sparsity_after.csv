@@ -1,0 +1,11 @@
+layer_name,num_elements,sparsity
+encoder.graph_layer_1.weight,250000,0.0007999999999999999
+encoder.graph_layer_1.bias,500,0.0
+encoder.graph_layer_2.weight,64000,0.525
+encoder.graph_layer_2.bias,128,0.0
+encoder.decoder_1.weight,250000,0.0
+encoder.decoder_1.bias,500,0.0
+encoder.decoder_2.weight,250000,0.11839999999999999
+encoder.decoder_2.bias,500,0.0
+encoder.linear.weight,384,0.0
+encoder.linear.bias,3,0.0
