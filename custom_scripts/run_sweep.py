@@ -27,7 +27,7 @@ def main():
 
         log_file = f"../log/txgnn/txgnn_{mode}.log"
         print(f"\n=== Running TxGNN [{mode.upper()}] ===")
-        #run_script(script, args, log_file)
+        run_script(script, args, log_file)
 
     os.chdir("..")
 
