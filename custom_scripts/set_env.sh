@@ -19,13 +19,10 @@ conda create --yes --name gnn_benchmark_env python=3.8
 # 4. Activate environment
 conda activate gnn_benchmark_env
 
-# 5. Install PyTorch
-!pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+# 5. Install DGL (with CUDA backend)
+pip install dgl -f https://data.dgl.ai/wheels/torch-2.2/cu121/repo.html
 
-# 6. Install DGL (with CUDA backend)
-!pip install dgl -f https://data.dgl.ai/wheels/torch-2.2/cu121/repo.html
-
-# 7. Clone and install TxGNN
+# 6. Clone and install TxGNN
 git clone https://github.com/mims-harvard/TxGNN.git
 cd TxGNN
 pip install -r requirements.txt
@@ -33,15 +30,18 @@ python setup.py install
 cd ..
 bash ./custom_scripts/update_txgnn_dataloader.sh
 
-# 8. Clone and setup VQGraph
+# 7. Clone and setup VQGraph
 git clone https://github.com/YangLing0818/VQGraph.git
 cd VQGraph
 pip install -r requirements.txt
 cd ..
 
-# 9. Install CUDA libraries (optional but safe)
+# 8. Install CUDA libraries
 conda install --yes cuda -c nvidia
 pip install pandas==1.3.0
+
+# 9. Install PyTorch
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
 # 10. Move custom scripts
 cp ./custom_scripts/txgnn/test_txgnn.py ./TxGNN/test_txgnn.py
