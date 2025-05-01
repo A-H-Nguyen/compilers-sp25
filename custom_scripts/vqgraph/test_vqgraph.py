@@ -63,7 +63,7 @@ def main():
         results.append(run_phase("student", dataset, teacher, mode))
 
     df = pd.DataFrame(results)
-    df.to_csv("summary_vqgraph_runs.csv", index=False)
+    df.to_csv("../output/summary_vqgraph_runs.csv", index=False)
     print("\n=== Summary ===")
     print(df)
 

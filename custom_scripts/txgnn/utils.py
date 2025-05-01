@@ -41,7 +41,7 @@ def export_layerwise_sparsity(model, filename="sparsity_snapshot.csv"):
     records = []
     for name, param in model.named_parameters():
         total = param.numel()
-        zeros = (param < 1e-8).sum().item()
+        zeros = (param.abs() < 1e-8).sum().item()
         sparsity = (zeros / total) * 100 if total > 0 else 0
         records.append({
             'layer_name': name,

@@ -8,7 +8,7 @@ ACTIVATE_CONDA = source $(CONDA_PREFIX)/bin/activate
 
 # 1. Install Miniconda + Conda Environment
 setup_env:
-	bash setup_environment.sh
+	bash ./custom_scripts/setup_environment.sh
 
 # 2. Activate Conda Env manually (prints instructions)
 activate_env:

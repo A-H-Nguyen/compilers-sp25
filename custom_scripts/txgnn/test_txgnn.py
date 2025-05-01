@@ -7,8 +7,8 @@ from utils import (
 import torch
 import time
 import pandas as pd
+import argparse
 
-# === New: Helper to compute sparsity ===
 def compute_input_sparsity(tensor):
     total = tensor.numel()
     zeros = (tensor == 0).sum().item()
@@ -56,7 +56,7 @@ def run_experiment(name, compile_model=False):
             module.register_forward_hook(input_sparsity_hook)
 
     # Sparsity before training
-    export_layerwise_sparsity(TxGNNObj.model, f"sparsity_before_{name}.csv")
+    export_layerwise_sparsity(TxGNNObj.model, f"../output/TxGNN/sparsity_before_{name}.csv")
 
     print(f"=== {name.upper()} MODE TRAINING ===")
     start_train = time.time()
@@ -114,11 +114,15 @@ def run_experiment(name, compile_model=False):
 
 
 if __name__ == "__main__":
-    results = []
-    results.append(run_experiment(name="eager", compile_model=False))
-    results.append(run_experiment(name="compiled", compile_model=True))
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--use_compile", action="store_true", help="Enable torch.compile()")
+        args = parser.parse_args()
 
-    df = pd.DataFrame(results)
-    df.to_csv("summary_runtime_memory.csv", index=False)
-    print("\n=== Summary ===")
-    print(df)
+        results = []
+        results.append(run_experiment(name="eager", compile_model=False))
+        results.append(run_experiment(name="compiled", compile_model=args.use_compile))
+
+        df = pd.DataFrame(results)
+        df.to_csv("../output/summary_runtime_memory.csv", index=False)
+        print("\n=== Summary ===")
+        print(df)

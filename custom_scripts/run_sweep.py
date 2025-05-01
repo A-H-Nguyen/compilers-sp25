@@ -16,6 +16,11 @@ def run_script(script_path, args, log_file):
 def main():
     # Eager and Compiled modes
     modes = ["eager", "compiled"]
+
+    Path("output").mkdir(parents=True, exist_ok=True)
+    Path("output/TxGNN").mkdir(parents=True, exist_ok=True)
+    Path("output/VQGraph").mkdir(parents=True, exist_ok=True)
+
     os.chdir("TxGNN")
     
     # TxGNN Benchmark
