@@ -57,5 +57,19 @@ def main():
                 run_script(script, args, log_file)
     os.chdir("..")
 
+    # tPatchGNN benchmark
+    os.chdir("t-PatchGNN")
+    script = "./tPatchGNN/run_models.py"
+    tpatch_datasets = ["activity", "physionet", "ushcn"]
+    for dataset in tpatch_datasets:
+        args = [
+            "--dataset", dataset,
+            "--layerwise_csv",
+            "--gpu", "0"
+        ]
+        log_file = f"../log/tpatchgnn/tpatchgnn_{dataset}.log"
+        print(f"\n=== Running tPatchGNN [{dataset.upper()} | Compiled + Eager ] ===")
+        run_script(script, args, log_file)
+
 if __name__ == "__main__":
     main()

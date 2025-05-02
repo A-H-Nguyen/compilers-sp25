@@ -31,6 +31,15 @@ install_vqgraph:
 	cp ./custom_scripts/vqgraph/benchmark_utils.py ./VQGraph/benchmark_utils.py
 	cd VQGraph && pip install -r requirements.txt
 
+install_tpatchgnn:
+	git clone https://github.com/usail-hkust/t-PatchGNN.git
+	cp ./custom_scripts/tPatchGNN/run_models.py ./t-PatchGNN/tPatchGNN/run_models.py
+	cp ./custom_scripts/tPatchGNN/perf_utils.py ./t-PatchGNN/tPatchGNN/perf_utils.py
+	cd t-PatchGNN
+	pip install -r requirements.txt
+	rm tPatchGNN/run_models.py
+	cd ..
+
 # 5. Run all benchmark sweeps (your run_sweep.py assumed)
 benchmark_all:
 	$(ACTIVATE_CONDA) && conda activate $(ENV_NAME) && \

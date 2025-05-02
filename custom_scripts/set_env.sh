@@ -37,6 +37,13 @@ cd VQGraph
 pip install -r requirements.txt
 cd ..
 
+# 9. Clone and setup tPatchGNN
+git clone https://github.com/usail-hkust/t-PatchGNN.git
+cd t-PatchGNN
+pip install -r requirements.txt
+rm tPatchGNN/run_models.py
+cd ..
+
 # 8. Install CUDA libraries
 conda install --yes cuda -c nvidia
 pip install pandas==1.3.0
@@ -49,6 +56,8 @@ cp ./custom_scripts/txgnn/test_txgnn.py ./TxGNN/test_txgnn.py
 cp ./custom_scripts/txgnn/utils.py ./TxGNN/utils.py
 cp ./custom_scripts/vqgraph/test_vqgraph.py ./VQGraph/test_vqgraph.py
 cp ./custom_scripts/vqgraph/benchmark_utils.py ./VQGraph/benchmark_utils.py
+cp ./custom_scripts/tPatchGNN/run_models.py ./t-PatchGNN/tPatchGNN/run_models.py
+cp ./custom_scripts/tPatchGNN/perf_utils.py ./t-PatchGNN/tPatchGNN/perf_utils.py
 
 sed -i 's/from google_drive_downloader import GoogleDriveDownloader as gdd/import googledrivedownloader as gdd/' VQGraph/dataloader.py
 

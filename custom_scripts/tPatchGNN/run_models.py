@@ -124,7 +124,7 @@ def run_experiment(compile_flag: bool):
 
     # snapshot sparsity before
     if args.layerwise_csv:
-        export_layerwise_sparsity(model, f"sparsity_before_{'compiled' if compile_flag else 'eager'}.csv")
+        export_layerwise_sparsity(model, f"{args.dataset}_sparsity_before_{'compiled' if compile_flag else 'eager'}.csv")
 
     ##################################################################
 
@@ -182,8 +182,8 @@ def run_experiment(compile_flag: bool):
 
     # sparsity & forward times after
     if args.layerwise_csv:
-        export_layerwise_sparsity(model, f"sparsity_after_{'compiled' if compile_flag else 'eager'}.csv")
-        report_forward_times(model,     f"forward_times_{'compiled' if compile_flag else 'eager'}.csv")
+        export_layerwise_sparsity(model, f"{args.dataset}_sparsity_after_{'compiled' if compile_flag else 'eager'}.csv")
+        report_forward_times(model,     f"{args.dataset}_forward_times_{'compiled' if compile_flag else 'eager'}.csv")
 
     # EVALUATION (final)
     model.eval()
@@ -216,6 +216,6 @@ if __name__ == "__main__":
 
     # write summary
     df = pd.DataFrame(results)
-    df.to_csv("summary_runtime_memory.csv", index=False)
+    df.to_csv(f"{args.dataset}_summary_runtime_memory.csv", index=False)
     print("\n=== Summary (eager vs compiled) ===")
     print(df)
