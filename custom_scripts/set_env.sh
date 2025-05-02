@@ -43,6 +43,16 @@ cd VQGraph
 pip install -r requirements.txt
 cd ..
 
+# 9. Clone and setup tPatchGNN
+rm -rf t-PatchGNN
+git clone https://github.com/usail-hkust/t-PatchGNN.git
+cp ./custom_scripts/tPatchGNN/run_models.py ./t-PatchGNN/tPatchGNN/run_models.py
+cp ./custom_scripts/tPatchGNN/perf_utils.py ./t-PatchGNN/tPatchGNN/perf_utils.py
+cd t-PatchGNN
+pip install -r requirements.txt
+rm tPatchGNN/run_models.py
+cd ..
+
 # 8. Install CUDA libraries
 conda install --yes cuda -c nvidia
 #pip install pandas==1.3.0
@@ -50,8 +60,6 @@ conda install pandas=1.3.0 -c conda-forge
 
 # 9. Install PyTorch
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-
-# 10. Move custom scripts
 
 sed -i 's/from google_drive_downloader import GoogleDriveDownloader as gdd/import googledrivedownloader as gdd/' VQGraph/dataloader.py
 
