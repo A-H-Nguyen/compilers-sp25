@@ -20,7 +20,8 @@ install_txgnn:
 	git clone https://github.com/mims-harvard/TxGNN.git
 	cp ./custom_scripts/txgnn/test_txgnn.py ./TxGNN/test_txgnn.py
 	cp ./custom_scripts/txgnn/utils.py ./TxGNN/utils.py
-	cd TxGNN && pip install -r requirements.txt && python setup.py install
+	#cd TxGNN && pip install -r requirements.txt && python setup.py install
+	cd TxGNN && pip install -r requirements.txt && pip install .
 
 # 4. Install VQGraph separately (optional)
 install_vqgraph:

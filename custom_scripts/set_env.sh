@@ -26,7 +26,8 @@ pip install dgl -f https://data.dgl.ai/wheels/torch-2.2/cu121/repo.html
 git clone https://github.com/mims-harvard/TxGNN.git
 cd TxGNN
 pip install -r requirements.txt
-python setup.py install
+pip install .
+#python setup.py install
 cd ..
 bash ./custom_scripts/update_txgnn_dataloader.sh
 
