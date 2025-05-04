@@ -217,5 +217,9 @@ if __name__ == "__main__":
     # write summary
     df = pd.DataFrame(results)
     df.to_csv(f"{args.dataset}_summary_runtime_memory.csv", index=False)
+
+    pd.set_option("display.max_columns", None)
+    pd.set_option("display.width", 0)
+
     print("\n=== Summary (eager vs compiled) ===")
     print(df)
